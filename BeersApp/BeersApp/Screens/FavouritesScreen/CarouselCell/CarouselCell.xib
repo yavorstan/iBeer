@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CarouselCell" id="gTV-IL-0wX" customClass="CarouselCell" customModule="iBeer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="243" height="377"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="243" height="377"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGR-bD-qJJ">
+                        <rect key="frame" x="10" y="10" width="223" height="357"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rU-YR-vcg" customClass="BADownloadImageView" customModule="iBeer" customModuleProvider="target">
+                                <rect key="frame" x="36.5" y="25" width="150" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="n2y-v8-b1R">
+                                        <rect key="frame" x="120" y="6.5" width="25" height="22.5"/>
+                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="qTs-si-aeR"/>
+                                            <constraint firstAttribute="width" constant="25" id="qwy-5z-EQM"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="7Qn-KL-weC"/>
+                                    <constraint firstAttribute="height" constant="200" id="H50-28-x0a"/>
+                                    <constraint firstItem="n2y-v8-b1R" firstAttribute="top" secondItem="2rU-YR-vcg" secondAttribute="top" constant="5" id="dKq-cX-BZe"/>
+                                    <constraint firstAttribute="trailing" secondItem="n2y-v8-b1R" secondAttribute="trailing" constant="5" id="io7-ef-LGs"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVu-wJ-Zs4" customClass="BALabel" customModule="iBeer" customModuleProvider="target">
+                                <rect key="frame" x="10" y="255" width="203" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCx-3l-EUS">
+                                <rect key="frame" x="10" y="295.5" width="203" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYo-JY-0yL">
+                                <rect key="frame" x="36.5" y="25" width="150" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Xk6-uv-pH6"/>
+                                    <constraint firstAttribute="width" constant="150" id="k29-Pj-arS"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="favouriteButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="bjX-QF-jXw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IVu-wJ-Zs4" firstAttribute="top" secondItem="2rU-YR-vcg" secondAttribute="bottom" constant="30" id="BCK-s9-Sxp"/>
+                            <constraint firstItem="wCx-3l-EUS" firstAttribute="top" secondItem="IVu-wJ-Zs4" secondAttribute="bottom" constant="20" id="EAZ-4w-EDK"/>
+                            <constraint firstItem="2rU-YR-vcg" firstAttribute="centerX" secondItem="UGR-bD-qJJ" secondAttribute="centerX" id="ItP-S8-sn5"/>
+                            <constraint firstItem="OYo-JY-0yL" firstAttribute="centerX" secondItem="UGR-bD-qJJ" secondAttribute="centerX" id="Lv6-wh-H2r"/>
+                            <constraint firstItem="2rU-YR-vcg" firstAttribute="top" secondItem="UGR-bD-qJJ" secondAttribute="top" constant="25" id="NCG-bB-Srw"/>
+                            <constraint firstAttribute="trailing" secondItem="wCx-3l-EUS" secondAttribute="trailing" constant="10" id="bVz-IK-re5"/>
+                            <constraint firstItem="IVu-wJ-Zs4" firstAttribute="centerX" secondItem="UGR-bD-qJJ" secondAttribute="centerX" id="j0m-6H-071"/>
+                            <constraint firstAttribute="trailing" secondItem="IVu-wJ-Zs4" secondAttribute="trailing" constant="10" id="jqk-E9-Hxm"/>
+                            <constraint firstItem="OYo-JY-0yL" firstAttribute="top" secondItem="UGR-bD-qJJ" secondAttribute="top" constant="25" id="kYc-Or-Pcc"/>
+                            <constraint firstItem="wCx-3l-EUS" firstAttribute="leading" secondItem="UGR-bD-qJJ" secondAttribute="leading" constant="10" id="qkE-ht-W4i"/>
+                            <constraint firstItem="wCx-3l-EUS" firstAttribute="centerX" secondItem="UGR-bD-qJJ" secondAttribute="centerX" id="rBX-ai-6cn"/>
+                            <constraint firstItem="IVu-wJ-Zs4" firstAttribute="leading" secondItem="UGR-bD-qJJ" secondAttribute="leading" constant="10" id="zuL-2z-qr3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="UGR-bD-qJJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="9Fb-dI-HQh"/>
+                <constraint firstAttribute="trailing" secondItem="UGR-bD-qJJ" secondAttribute="trailing" constant="10" id="Kap-Hf-hrZ"/>
+                <constraint firstAttribute="bottom" secondItem="UGR-bD-qJJ" secondAttribute="bottom" constant="10" id="PCX-za-lF9"/>
+                <constraint firstItem="UGR-bD-qJJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="piV-Jv-cE0"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="282" height="439"/>
+            <connections>
+                <outlet property="beerImage" destination="2rU-YR-vcg" id="8PD-Je-G52"/>
+                <outlet property="beerName" destination="IVu-wJ-Zs4" id="0Rz-zT-ghF"/>
+                <outlet property="beerTagline" destination="wCx-3l-EUS" id="CkQ-mY-yhT"/>
+                <outlet property="favouriteButton" destination="OYo-JY-0yL" id="DOu-QL-YQ0"/>
+                <outlet property="favouriteIndicator" destination="n2y-v8-b1R" id="4c7-RH-ZsI"/>
+                <outlet property="outerView" destination="UGR-bD-qJJ" id="Veh-rj-iZo"/>
+            </connections>
+            <point key="canvasLocation" x="74.637681159420296" y="89.397321428571431"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
+    </resources>
+</document>
