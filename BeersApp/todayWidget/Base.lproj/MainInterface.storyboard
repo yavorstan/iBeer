@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="iBeer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNk-id-GK6" customClass="BADownloadImageViewWithBorder" customModule="iBeer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="49" width="62" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87" id="exh-SE-tme"/>
+                                    <constraint firstAttribute="width" constant="62" id="mce-oi-63v"/>
+                                </constraints>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeY-oo-2aO" customClass="BALabel" customModule="iBeer">
+                                <rect key="frame" x="92" y="49" width="208" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jx6-7c-9sR" customClass="BALineDivider" customModule="iBeer">
+                                <rect key="frame" x="20" y="156" width="280" height="2"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="0xI-xP-Ul5"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7W-eU-h9V" customClass="BALabel" customModule="iBeer" customModuleProvider="target">
+                                <rect key="frame" x="160" y="209" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gR0-e5-QfB" customClass="TodayWidgetFavouriteCell" customModule="todayWidget">
+                                <rect key="frame" x="20" y="168" width="73" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="TFG-FK-fE4"/>
+                                    <constraint firstAttribute="height" constant="120" id="XEZ-Oc-3jN"/>
+                                </constraints>
+                            </view>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qar-Ki-oGc" customClass="TodayWidgetFavouriteCell" customModule="todayWidget">
+                                <rect key="frame" x="103" y="168" width="73" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnT-fn-XUi" customClass="TodayWidgetFavouriteCell" customModule="todayWidget">
+                                <rect key="frame" x="186" y="168" width="73" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMd-pC-Smu" customClass="BALabel" customModule="iBeer" customModuleProvider="target">
+                                <rect key="frame" x="92" y="81.5" width="208" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-Fn-CGL" customClass="TodayWidgetFavouriteCell" customModule="todayWidget">
+                                <rect key="frame" x="269" y="168" width="73" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WH9-eS-8tw">
+                                <rect key="frame" x="20" y="44" width="280" height="107"/>
+                                <connections>
+                                    <action selector="randomBeerButtonPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="AYS-D5-DUg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Plb-Fn-CGL" firstAttribute="leading" secondItem="AnT-fn-XUi" secondAttribute="trailing" constant="10" id="1ed-AW-stx"/>
+                            <constraint firstItem="AnT-fn-XUi" firstAttribute="leading" secondItem="qar-Ki-oGc" secondAttribute="trailing" constant="10" id="6i8-zm-rmV"/>
+                            <constraint firstItem="UeY-oo-2aO" firstAttribute="leading" secondItem="FNk-id-GK6" secondAttribute="trailing" constant="10" id="7Ez-cZ-td1"/>
+                            <constraint firstItem="o7W-eU-h9V" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="85I-Qn-2et"/>
+                            <constraint firstItem="gR0-e5-QfB" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" id="8YQ-WO-60M"/>
+                            <constraint firstItem="o7W-eU-h9V" firstAttribute="top" secondItem="jx6-7c-9sR" secondAttribute="bottom" constant="51" id="8xD-ZE-pKC"/>
+                            <constraint firstItem="Plb-Fn-CGL" firstAttribute="height" secondItem="gR0-e5-QfB" secondAttribute="height" id="BMZ-CK-i3e"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="jx6-7c-9sR" secondAttribute="trailing" constant="20" id="F05-hC-muJ"/>
+                            <constraint firstItem="Plb-Fn-CGL" firstAttribute="width" secondItem="gR0-e5-QfB" secondAttribute="width" id="HYO-qe-J8j"/>
+                            <constraint firstItem="jx6-7c-9sR" firstAttribute="top" secondItem="WH9-eS-8tw" secondAttribute="bottom" constant="5" id="IhV-20-yjk"/>
+                            <constraint firstItem="jx6-7c-9sR" firstAttribute="top" secondItem="FNk-id-GK6" secondAttribute="bottom" constant="20" id="NYW-ii-SbC"/>
+                            <constraint firstItem="FNk-id-GK6" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" id="QH4-pA-7Td"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="WH9-eS-8tw" secondAttribute="trailing" constant="20" id="RnP-cg-qdz"/>
+                            <constraint firstItem="AnT-fn-XUi" firstAttribute="top" secondItem="gR0-e5-QfB" secondAttribute="top" id="RxF-QC-Fry"/>
+                            <constraint firstItem="gR0-e5-QfB" firstAttribute="top" secondItem="jx6-7c-9sR" secondAttribute="bottom" constant="10" id="SJI-Ky-vip"/>
+                            <constraint firstItem="FNk-id-GK6" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="5" id="SN7-KJ-Bue"/>
+                            <constraint firstItem="tMd-pC-Smu" firstAttribute="trailing" secondItem="UeY-oo-2aO" secondAttribute="trailing" id="Vss-g7-FMH"/>
+                            <constraint firstItem="qar-Ki-oGc" firstAttribute="height" secondItem="gR0-e5-QfB" secondAttribute="height" id="Wv9-st-6b1"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="UeY-oo-2aO" secondAttribute="trailing" constant="20" id="ZUG-0u-3KM"/>
+                            <constraint firstItem="AnT-fn-XUi" firstAttribute="height" secondItem="gR0-e5-QfB" secondAttribute="height" id="aVs-pA-iZq"/>
+                            <constraint firstItem="UeY-oo-2aO" firstAttribute="top" secondItem="FNk-id-GK6" secondAttribute="top" id="axf-LT-FdN"/>
+                            <constraint firstItem="AnT-fn-XUi" firstAttribute="width" secondItem="gR0-e5-QfB" secondAttribute="width" id="fXz-dp-vBF"/>
+                            <constraint firstItem="qar-Ki-oGc" firstAttribute="width" secondItem="gR0-e5-QfB" secondAttribute="width" id="gIS-P9-i3i"/>
+                            <constraint firstItem="tMd-pC-Smu" firstAttribute="top" secondItem="UeY-oo-2aO" secondAttribute="bottom" constant="12" id="gUa-Tt-Vfx"/>
+                            <constraint firstItem="jx6-7c-9sR" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" id="nhx-Xs-Fb9"/>
+                            <constraint firstItem="WH9-eS-8tw" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="oBA-MY-xEr"/>
+                            <constraint firstItem="qar-Ki-oGc" firstAttribute="top" secondItem="gR0-e5-QfB" secondAttribute="top" id="oBX-Qu-0zP"/>
+                            <constraint firstItem="WH9-eS-8tw" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" id="oce-Tb-N1s"/>
+                            <constraint firstItem="qar-Ki-oGc" firstAttribute="leading" secondItem="gR0-e5-QfB" secondAttribute="trailing" constant="10" id="u6G-9K-FLO"/>
+                            <constraint firstItem="tMd-pC-Smu" firstAttribute="leading" secondItem="UeY-oo-2aO" secondAttribute="leading" id="vLu-F3-jv2"/>
+                            <constraint firstItem="Plb-Fn-CGL" firstAttribute="top" secondItem="gR0-e5-QfB" secondAttribute="top" id="woz-kt-IDq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="300"/>
+                    <connections>
+                        <outlet property="beerName" destination="UeY-oo-2aO" id="H6y-vE-anK"/>
+                        <outlet property="beerTagLine" destination="tMd-pC-Smu" id="m02-yq-UOc"/>
+                        <outlet property="imageView" destination="FNk-id-GK6" id="h8W-pD-9BH"/>
+                        <outlet property="noFavBeersLabel" destination="o7W-eU-h9V" id="LlX-a4-pQY"/>
+                        <outletCollection property="favouriteBeersViews" destination="gR0-e5-QfB" collectionClass="NSMutableArray" id="HQY-3w-qbc"/>
+                        <outletCollection property="favouriteBeersViews" destination="qar-Ki-oGc" collectionClass="NSMutableArray" id="Mad-FZ-tQS"/>
+                        <outletCollection property="favouriteBeersViews" destination="AnT-fn-XUi" collectionClass="NSMutableArray" id="skY-w3-0vF"/>
+                        <outletCollection property="favouriteBeersViews" destination="Plb-Fn-CGL" collectionClass="NSMutableArray" id="xeb-A0-Eah"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>

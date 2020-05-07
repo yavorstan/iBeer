@@ -10,15 +10,18 @@ import UIKit
 
 extension UIFont {
     
+    static let desctiptionFontSize = 16
+    static let fontName = "Trebuchet MS"
+    
     struct defaultTitleFont {
-        static let font = UIFont(name: "Trebuchet MS", size: 19)!
+        static let font = UIFont(name: "Trebuchet MS", size: UIDevice.current.userInterfaceIdiom == .phone ? 19 : 24)!
     }
     
     struct defaultDescriptionFont {
-        static let font = UIFont(name: "Trebuchet MS", size: 14)!
+        static let font = UIFont(name: "Trebuchet MS", size: UIDevice.current.userInterfaceIdiom == .phone ? 16 : 21)!
     }
     
     struct defaultInfoFont {
-        static let font = UIFont(name: "Trebuchet MS", size: 13)!
+        static let font = UIFont(name: "Trebuchet MS", size: UIDevice.current.userInterfaceIdiom == .phone ? 13 : 17)!
     }
 }

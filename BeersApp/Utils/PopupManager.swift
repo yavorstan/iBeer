@@ -23,12 +23,29 @@ class PopupManager {
             showCircularIcon: true
         )
         let alertView = SCLAlertView(appearance: appearance)
-        alertView.addButton("Yes") {
+        alertView.addButton(NSLocalizedString("yes", comment: "")) {
             self.yesTapped!()
         }
-        alertView.addButton("No") {
+        alertView.addButton(NSLocalizedString("no", comment: "")) {
             return
         }
         alertView.showNotice(title, subTitle: message, circleIconImage: UIImage(named: "d.circle"))
     }
+    
+    func showInfoPopup(title: String, message: String) {
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            kTitleFont: UIFont.defaultTitleFont.font,
+            kTextFont: UIFont.defaultDescriptionFont.font,
+            kButtonFont: UIFont.defaultDescriptionFont.font,
+            showCloseButton: false,
+            showCircularIcon: true
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        alertView.addButton(NSLocalizedString("str_ok", comment: ""), action: {
+            return
+        })
+        alertView.showNotice(title, subTitle: message, circleIconImage: UIImage(named: "d.circle"))
+    }
+    
 }

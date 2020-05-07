@@ -34,28 +34,31 @@ class BeersListCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.DefaultFiltersViewColor.color
+        self.selectedBackgroundView = backgroundView
     }
     
     func populate(beer: BeersListModel) {
         self.beerName.text = beer.name
         self.beerTagLine.text = beer.tagLine
         let stringURL = beer.image_url
-        let url = (URL(string: stringURL))!
+        let url = URL(string: stringURL)
         self.beerImage.populateImage(withURL: url)
+        self.beerImage.activityIndicator.isHidden = true
         manageFavouriteIndicator(beerID: beer.id)
     }
     
     func manageFavouriteIndicator(beerID: Int) {
-        if #available(iOS 13.0, *) {
-            if UserDefaults.standard.checkIfFavourite(beerID: beerID) {
-                self.favouriteIndicator.image = UIImage(systemName: "heart.fill")
+            if FavouriteBeersManager.shared.checkIfFavourite(beerID: beerID) {
                 self.favouriteIndicator.tintColor = .red
+                self.favouriteIndicator.image = UIImage.image(withName: "heart.fill", width: 12, height: 12, withColor: .red)
             } else {
-                self.favouriteIndicator.image = UIImage(systemName: "heart")
                 self.favouriteIndicator.tintColor = UIColor.DefaultTextColor.color
+                self.favouriteIndicator.image = UIImage.image(withName: "heart", width: 12, height: 12, withColor: UIColor.DefaultTextColor.color)
             }
         }
-    }
+    
     
     @IBAction func favouriteButtonPressed(_ sender: UIButton) {
         let beerID = imageTapped?(self)

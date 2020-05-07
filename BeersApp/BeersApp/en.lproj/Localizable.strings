@@ -1,0 +1,123 @@
+/* 
+  Localizable.strings
+  BeersApp
+
+  Created by Yavor Stanoev on 3.04.20.
+  Copyright © 2020 Yavor Stanoev. All rights reserved.
+*/
+
+//MARK: Favourites Screen
+
+"str_no_fav_beers" = "No favourite beers!";
+
+"str_warning" = "WARNING";
+
+"str_remove_beer_warning" = "Are you sure you want to remove '%@' from favourites?";
+
+"yes" = "Yes";
+
+"no" = "No";
+
+"str_beer_removed_from_fav" = "Removed from favourites!";
+
+"str_max_fav_beers" = "Max 15 beers in favourites!";
+
+//MARK: Home Screen
+
+"str_search_placeholder" = "Search beer by name...";
+
+//Filters
+
+"yeast" = "Yeast";
+
+"hops" = "Hops";
+
+"malt" = "Malt";
+
+"food" = "Food";
+
+"from" = "from";
+
+"to" = "to";
+
+"brewed" = "Brewed";
+
+"before" = "before";
+
+"after" = "after";
+
+"str_no_beers_matching_parameters" = "No beers matching \n your parameters found!";
+
+"str_wrong_input" = "Wrong input!";
+
+"str_clear" = "Clear Filters";
+
+//"btn_search" = "Search";
+
+//MARK: Settings Screen
+
+"str_logout" = "Are you sure you want to logout?";
+
+"str_logged_out" = "Logged out";
+
+"str_pages" = "Beers Per Page";
+
+"str_language" = "Language";
+
+"str_language_change_12" = "App must be restarted in order to take effect!";
+
+"str_ok" = "OK";
+
+"str_developer_page" = "Developer Page";
+
+"str_about_us" = "About us";
+
+"str_reward_ad" = "You were awarded 5 stars!";
+
+"str_watch_ad" = "Watch An Advert";
+
+"str_watch_button" = "Watch";
+
+"str_allow_ads" = "Allow Ads";
+
+//MARK: Beer Details
+
+"abv" = "Alcohol by volume (abbreviated as ABV, abv, or alc/vol) is a standard measure of how much alcohol is contained in a given volume of an alcoholic beverage.";
+
+"ibu" = "International Bitterness (or 'Bittering') Unit or IBU was invented because it was hard to measure how 'bitter' a beer was, just like it's hard to measure how 'comfortable' your favorite sweater is...it was all about the perception.";
+
+"ebc" = "Color Units EBC (European Brewery Convention) refer to the color of a beer measured in a technical manner.";
+
+"date" = "First brewed in: ";
+
+"description" = "Description: ";
+
+"goes_well" = "Goes well with: ";
+
+"brewing_tips" = "Brewing tips: ";
+
+//Malt, hops and yeast from Filters
+
+"contributor" = "Contributor: ";
+
+//Facebook Sharing
+
+"str_share_successful" = "Share successful!";
+
+"str_share_error" = "There was an error!";
+
+"str_share_canceled" = "Share canceled!";
+
+//MARK: Custom Accessory View
+
+"btn_done" = "Done";
+
+"btn_clear" = "Clear";
+
+//MARK: Developer Page
+
+"str_phone_popup" = "This will make a phone call. Are you sure?";
+
+"str_email_popup" = "This will open the default email application. Are you sure?";
+
+"str_linkedin_popup" = "This will redirect you to LinkedIn. Are you sure?";

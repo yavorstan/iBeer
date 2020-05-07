@@ -1,0 +1,99 @@
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "0CV-Et-fDP"; */
+"0CV-Et-fDP.title" = "Нaстройки";
+
+/* Class = "UILabel"; text = "Favourite Beers Display Style"; ObjectID = "1hH-9s-uEz"; */
+"1hH-9s-uEz.text" = "Изобразяване на любимите бири";
+
+/* Class = "UILabel"; text = "Notifications"; ObjectID = "2Rw-J8-kx0"; */
+"2Rw-J8-kx0.text" = "Известия";
+
+/* Class = "UILabel"; text = "IBU"; ObjectID = "3TK-GB-ib3"; */
+"3TK-GB-ib3.text" = "IBU";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8zz-sc-x4T"; */
+"8zz-sc-x4T.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Favourite"; ObjectID = "Gvj-Rm-5kW"; */
+"Gvj-Rm-5kW.title" = "Любими";
+
+/* Class = "UINavigationItem"; title = "iBeer"; ObjectID = "JAQ-KP-Eab"; */
+"JAQ-KP-Eab.title" = "iBeer";
+
+/* Class = "UISegmentedControl"; Nef-7k-Snu.segmentTitles[0] = "Table"; ObjectID = "Nef-7k-Snu"; */
+"Nef-7k-Snu.segmentTitles[0]" = "Таблица";
+
+/* Class = "UISegmentedControl"; Nef-7k-Snu.segmentTitles[1] = "Carousel"; ObjectID = "Nef-7k-Snu"; */
+"Nef-7k-Snu.segmentTitles[1]" = "Каросел";
+
+/* Class = "UILabel"; text = "Full-Name"; ObjectID = "RJw-hG-84s"; */
+"RJw-hG-84s.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "Rbs-Jp-RNI"; */
+"Rbs-Jp-RNI.title" = "Назад";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "V8y-hC-aVM"; */
+"V8y-hC-aVM.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "VNT-8w-toP"; */
+"VNT-8w-toP.title" = "Начало";
+
+/* Class = "UINavigationItem"; title = "iBeer"; ObjectID = "ZEf-Eq-PYz"; */
+"ZEf-Eq-PYz.title" = "iBeer";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "akF-6O-zQi"; */
+"akF-6O-zQi.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "c7o-o1-fu1"; */
+"c7o-o1-fu1.text" = "Label";
+
+/* Class = "UILabel"; text = "Dark Mode"; ObjectID = "cQx-SL-xda"; */
+"cQx-SL-xda.text" = "Тъмна Тема";
+
+/* Class = "UILabel"; text = "EBC"; ObjectID = "erQ-HO-gBf"; */
+"erQ-HO-gBf.text" = "EBC";
+
+/* Class = "UILabel"; text = "No beers have been found."; ObjectID = "fqk-Fw-m67"; */
+"fqk-Fw-m67.text" = "Няма намерени бири!";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "fsi-Sj-dce"; */
+"fsi-Sj-dce.text" = "Име";
+
+/* Class = "UITabBarItem"; title = "Favourites"; ObjectID = "gpV-I4-evf"; */
+"gpV-I4-evf.title" = "Любими";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hae-zh-LLc"; */
+"hae-zh-LLc.text" = "Label";
+
+/* Class = "UILabel"; text = "Random Beer Settings"; ObjectID = "kYx-jK-EkP"; */
+"kYx-jK-EkP.text" = "Извеждане на произволна бира";
+
+/* Class = "UINavigationItem"; title = "iBeer"; ObjectID = "lvP-C0-DuA"; */
+"lvP-C0-DuA.title" = "iBeer";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mTF-FX-zfU"; */
+"mTF-FX-zfU.text" = "Label";
+
+/* Class = "UILabel"; text = "ABV"; ObjectID = "u7i-H9-ZKw"; */
+"u7i-H9-ZKw.text" = "ABV";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uv4-70-ywD"; */
+"uv4-70-ywD.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "LOGOUT"; ObjectID = "uzL-Fn-Vj1"; */
+"uzL-Fn-Vj1.normalTitle" = "ИЗХОД";
+
+/* Class = "UISegmentedControl"; z1n-WD-JaP.segmentTitles[0] = "All Beers"; ObjectID = "z1n-WD-JaP"; */
+"z1n-WD-JaP.segmentTitles[0]" = "Всички";
+
+/* Class = "UISegmentedControl"; z1n-WD-JaP.segmentTitles[1] = "Favourites"; ObjectID = "z1n-WD-JaP"; */
+"z1n-WD-JaP.segmentTitles[1]" = "Любими";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zAc-Ql-d7H"; */
+"zAc-Ql-d7H.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zHI-fk-w9W"; */
+"zHI-fk-w9W.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "zbC-63-jvc"; */
+"zbC-63-jvc.normalTitle" = "Търсене";

@@ -12,12 +12,12 @@ import PKHUD
 
 class HomeScreenViewController: BAViewController{
     
+    @IBOutlet weak var homeButton: UITabBarItem!
+    
     @IBOutlet weak var noBeersFoundLabel: BALabel!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
-    @IBOutlet weak var searchBarCancelLabel: UILabel!
     
     var delegate: ResponseManagerDelegate?
     var allBeersList = [BeersListModel]()
@@ -27,6 +27,10 @@ class HomeScreenViewController: BAViewController{
     var hasNextPage = true
     
     var isSearching = Bool()
+    
+    var isRandomButtonPressed = false
+    
+    var currentNumberOfBeersPerPage = Int()
     
     //MARK: Lifecycle Methods
     override func viewWillDisappear(_ animated: Bool) {
@@ -38,28 +42,107 @@ class HomeScreenViewController: BAViewController{
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let filter = UIBarButtonItem(title: "Filters", style: .plain, target: self, action: #selector(filterTapped))
-        self.tabBarController?.navigationItem.rightBarButtonItems = [filter]
-        tableView.reloadData()
+        
+        let filtersButton = UIBarButtonItem(title: "Filters", style: .plain, target: self, action: #selector(filterTapped))
+        filtersButton.image = UIImage.image(withName: "line.horizontal.3.decrease.circle", width: 25, height: 25, withColor: nil)
+        let randomButton = UIBarButtonItem(title: "Random", style: .plain, target: self, action: #selector(randomTapped))
+        randomButton.image = UIImage.image(withName: "wand.and.stars.inverse", width: 25, height: 25, withColor: nil)
+        
+        self.tabBarController?.navigationItem.rightBarButtonItems = [filtersButton, randomButton]
+        
+        let customAccessoryView = Bundle.main.loadNibNamed("CustomAccessoryView", owner: self, options: nil)?.first as! CustomAccessoryView
+        
+        customAccessoryView.clearHandler = { () -> Void in
+            self.clearButtonPressed()
+        }
+        customAccessoryView.doneHandler = { () -> Void in
+            self.searchBar.endEditing(true)
+        }
+        searchBar.inputAccessoryView = customAccessoryView
+        
         searchBar.barTintColor = UIColor.DefaultAppColor.color
-        searchBar.searchTextField.tintColor = UIColor.DefaultTextColor.color
-        searchBarCancelLabel.textColor = UIColor.DefaultTextColor.color
+        if #available(iOS 13.0, *) {
+            searchBar.searchTextField.tintColor = UIColor.DefaultTextColor.color
+        } else {
+            searchBar.tintColor = UIColor.DefaultTextColor.color
+        }
+        
         noBeersFoundLabel.isHidden = true
+        
+        if currentNumberOfBeersPerPage != UserDefaults.standard.getBeersPerPage()! {
+            currentNumberOfBeersPerPage = UserDefaults.standard.getBeersPerPage()!
+            self.currentPage = 1
+            self.allBeersList.removeAll()
+            RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.withPages)", delegate: delegate, responseManager: BeerListResponseManager())
+        }
+        if allBeersList.count > 0 {
+            let indexPath = IndexPath(row: 0, section: 0)
+            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        }
+        
+        tableView.reloadData()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         searchBar.delegate = self
-        searchBar.placeholder = "Search beer by name..."
+        searchBar.placeholder = NSLocalizedString("str_search_placeholder", comment: "")
         self.tabBarController?.navigationItem.hidesBackButton = true
         delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: CellConstants.BeersListCell, bundle: nil), forCellReuseIdentifier: CellConstants.BeersListCell)
-        RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.beersPerPage)", delegate: delegate, responseManager: BeerListResponseManager())
+        
+        currentNumberOfBeersPerPage = UserDefaults.standard.getBeersPerPage()!
+        RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.withPages)", delegate: delegate, responseManager: BeerListResponseManager())
     }
     
+    //MARK: - Button Actions
     @objc func filterTapped () {
         performSegue(withIdentifier: SegueConstants.goToFilterScreen, sender: self)
+    }
+    
+    @objc func randomTapped() {
+        self.isRandomButtonPressed = true
+        performSegue(withIdentifier: SegueConstants.goToBeerDetails, sender: self)
+        self.isRandomButtonPressed = false
+    }
+    
+    //MARK: Util Methods
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueConstants.goToBeerDetails  {
+            let vc = segue.destination as! BeerDetailsViewController
+            var endpoint = String()
+            if isRandomButtonPressed {
+                if UserDefaults.standard.randomBeerIsFromFavourites() {
+                    let favouritesArray = FavouriteBeersManager.shared.getFavouriteBeersArray()
+                    self.selectedBeerId = (favouritesArray?.randomElement()!.id)!
+                    vc.selectedBeerId = selectedBeerId
+                    endpoint = "\(selectedBeerId)"
+                } else {
+                    endpoint = "random"
+                }
+                vc.url = "\(URLConstants.getBeerById)\(endpoint)"
+            } else {
+                vc.selectedBeerId = selectedBeerId
+                vc.url = "\(URLConstants.getBeerById)\(selectedBeerId)"
+            }
+            
+        }
+    }
+    
+    func fromWidget() {
+        let appdelgateObj = UIApplication.shared.delegate as! AppDelegate
+        if let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "details") as? BeerDetailsViewController {
+            if let window = appdelgateObj.window , let rootViewController = window.rootViewController {
+                destinationVC.selectedBeerId = 5
+                var currentController = rootViewController
+                while let presentedController = currentController.presentedViewController {
+                    currentController = presentedController
+                }
+                currentController.present(destinationVC, animated: true, completion: nil)
+            }
+        }
     }
 }
 
@@ -99,17 +182,17 @@ extension HomeScreenViewController: UITableViewDataSource {
     }
     
     //Reloads table data when bottom is reached
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !self.isSearching{
-            if indexPath.section == tableView.numberOfSections - 1 &&
-                indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let bottomEdge = self.tableView.contentOffset.y + self.tableView.frame.size.height
+        if bottomEdge >= self.tableView.contentSize.height {
+            if !self.isSearching{
                 if hasNextPage {
                     currentPage += 1
-                    RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.beersPerPage)", delegate: delegate, responseManager: BeerListResponseManager())
+                    RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.withPages)", delegate: delegate, responseManager: BeerListResponseManager())
                 }
+            } else {
+                return
             }
-        } else {
-            return
         }
     }
     
@@ -118,7 +201,7 @@ extension HomeScreenViewController: UITableViewDataSource {
         cell.populate(beer: allBeersList[indexPath.row])
         let beer = self.allBeersList[indexPath.row]
         cell.imageTapped = { (self) in
-            UserDefaults.standard.manageBeer(beer: beer)
+            FavouriteBeersManager.shared.manageBeer(beer: beer)
             return beer.id
         }
         return cell
@@ -134,12 +217,6 @@ extension HomeScreenViewController: UITableViewDelegate {
         performSegue(withIdentifier: SegueConstants.goToBeerDetails, sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueConstants.goToBeerDetails  {
-            let vc = segue.destination as! BeerDetailsViewController
-            vc.selectedBeerId = selectedBeerId
-        }
-    }
 }
 
 //MARK: - Search Bar
@@ -150,23 +227,32 @@ extension HomeScreenViewController: UISearchBarDelegate {
             self.isSearching = false
             self.currentPage = 1
             self.allBeersList.removeAll()
-            RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.beersPerPage)", delegate: delegate, responseManager: BeerListResponseManager())
+            RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.withPages)", delegate: delegate, responseManager: BeerListResponseManager())
         } else {
             self.isSearching = true
-            RequestManager.shared.fetch(url: "https://api.punkapi.com/v2/beers?beer_name=\(searchText)", delegate: delegate, responseManager: BeerListResponseManager())
+            RequestManager.shared.fetch(url: "\(URLConstants.beerByName)\(searchText)", delegate: delegate, responseManager: BeerListResponseManager())
+        }
+        if searchBar.text == "" {
+            self.isSearching = false
+            self.currentPage = 1
+            self.allBeersList.removeAll()
+            RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.withPages)", delegate: delegate, responseManager: BeerListResponseManager())
         }
     }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    func clearButtonPressed() {
+        if #available(iOS 13.0, *) {
+            searchBar.searchTextField.text = ""
+            searchBar.searchTextField.endEditing(true)
+        } else {
+            searchBar.text = ""
+            searchBar.endEditing(true)
+        }
         self.isSearching = false
         self.currentPage = 1
         self.allBeersList.removeAll()
-        self.searchBar.text = ""
-        RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.beersPerPage)", delegate: delegate, responseManager: BeerListResponseManager())
+        RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.withPages)", delegate: delegate, responseManager: BeerListResponseManager())
+        tableView.isHidden = false
+        noBeersFoundLabel.isHidden = true
         tableView.reloadData()
-        searchBar.endEditing(true)
-    }
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        tableView.reloadData()
-        searchBar.endEditing(true)
     }
 }

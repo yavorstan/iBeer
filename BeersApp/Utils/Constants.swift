@@ -61,16 +61,34 @@ struct BeerDetailsConstants {
 }
 
 struct URLConstants {
-    static let defaultImageForBeer = "https://media-public.canva.com/MADGxu2zqjY/4/thumbnail_large.png"
     static let defaultImageForUser = "https://app.helperbit.com/media/avatar/png/single_user_anonymous_256x256.png"
-    static let mainURL = "https://api.punkapi.com/v2/"
-    static let getBeerById = "https://api.punkapi.com/v2/beers/"
-    static let getBeersListPage = "https://api.punkapi.com/v2/beers?page="
-    static let beersPerPage = "&per_page=25"
+    static let punkAPI = "https://api.punkapi.com/v2/"
+    static let testAPI = "https://d9e554f2.ngrok.io/v2/"
+    static let testAPIAuthenticate = "https://d9e554f2.ngrok.io/authenticate/google?idToken="
+    static let mainURL = URLConstants.punkAPI
+    static let getBeerById = "\(URLConstants.mainURL)beers/"
+    static let getBeersListPage = "\(URLConstants.mainURL)beers?page="
+    static var beersByPage = UserDefaults.standard.getBeersPerPage()!
+    static var withPages = "&per_page=\(URLConstants.beersByPage)&"
+    static let beerByName = "\(URLConstants.mainURL)beers?beer_name="
 }
 
 struct PopOverConstants {
     static let width = 250
+}
+
+struct FiltersViewConstants {
+    static let animationDuration = 0.6
+    static let animationDelay = 0.1
+}
+
+struct SettingsScrollViewConstants {
+    static let noAdsHeight = CGFloat(630)
+    static let onlyWatchAdButtonHeight = CGFloat(720)
+    static let adSettingsHeight = CGFloat(790)
+    
+    static let watchAdvertViewHeight = CGFloat(80)
+    static let allowSettingsViewTopConstraint = CGFloat(15)
 }
 
 struct GoogleSignInConstant {
@@ -78,16 +96,66 @@ struct GoogleSignInConstant {
 }
 
 struct BeerInfoTextConstants {
-    static let ABV = "Alcohol by volume (abbreviated as ABV, abv, or alc/vol) is a standard measure of how much alcohol is contained in a given volume of an alcoholic beverage."
-    static let ABVWindowHeight = 85
-    static let IBU = "International Bitterness (or 'Bittering') Unit or IBU was invented because it was hard to measure how 'bitter' a beer was, just like it's hard to measure how 'comfortable' your favorite sweater is...it was all about the perception."
-    static let IBUWindowsHeight = 130
-    static let EBC = "Color Units EBC (European Brewery Convention) refer to the color of a beer measured in a technical manner."
-    static let EBCWindownHeight = 70
+    static let ABV = NSLocalizedString("abv", comment: "")
+    static let ABVWindowHeight = 90
+    static let IBU = NSLocalizedString("ibu", comment: "")
+    static let IBUWindowsHeight = 135
+    static let EBC = NSLocalizedString("ebc", comment: "")
+    static let EBCWindownHeight = 75
 }
 
 struct PushNotificationsConstants {
     static let title = "iBeer"
     static let body = "Come to take a look at our amazing collection of beers!"
     static let timeInterval = 7
+}
+
+struct ImagesNamesConstants {
+    static let chevronUp = "chevron.up.circle"
+    static let chevronDown = "chevron.down.circle"
+    static let randomButtom = "wand.and.stars.inverse"
+    static let filtersButton = "line.horizontal.3.decrease.circle"
+    
+    static let descriptionIcon = "pencil.and.ellipsis.rectangle"
+}
+
+struct BeerDetailsIcons {
+    static let date = "pencil.and.ellipsis.rectangle"
+}
+
+struct SegmentedControlConstants {
+    static let favouritesTableStyle = 0
+    static let favouritesCarouselStyle = 1
+    
+    static let randomBeerFromAllBeers = 0
+    static let randomBeerFromFavorites = 1
+    
+    static let tenBeersPerPage = 0
+    static let twentyFiveBeersPerPage = 1
+    static let fiftyBeersPerPage = 2
+    
+    static let englishLanguage = 0
+    static let bulgarianLanguage = 1
+    static let arabicLanguage = 2
+    
+}
+
+struct CarouselCellSize {
+    static let iPhoneSize = CGSize(width: 243, height: 377)
+    static let iPadSize = CGSize(width: 443, height: 577)
+}
+
+struct AdvertsConstants {
+    static let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716"
+    static let rewaredAdUnitID = "ca-app-pub-3940256099942544/1712485313"
+    
+    static let timeIntervalForRewardedAd = 100.0 //in seconds
+}
+
+struct GroupIdentifier {
+    static let identifier = "group.org.BeersApp"
+}
+
+struct FavouriteBeersConstants {
+    static let maxBeersInFavourites = 15
 }

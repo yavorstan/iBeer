@@ -17,6 +17,7 @@ struct BeerDetailsData: Codable {
     let abv: Double?
     let ibu: Double?
     let ebc: Double?
+    let first_brewed: String
     
     let ingredients: Ingredients
     
@@ -28,18 +29,22 @@ struct BeerDetailsData: Codable {
 struct Ingredients: Codable {
     let malt: [Malt]
     let hops: [Hops]
-    let yeast: String
+    let yeast: String?
 }
 
-struct Malt: Codable {
+protocol Ingredient {
+    var name: String { get }
+    var amount: Amount { get }
+}
+
+struct Malt: Codable, Ingredient {
     let name: String
     let amount: Amount
 }
 
-struct Hops: Codable {
+struct Hops: Codable, Ingredient {
     let name: String
     let amount: Amount
-    let attribute: String
 }
 
 struct Amount: Codable {

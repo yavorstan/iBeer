@@ -36,14 +36,15 @@ class CarouselCell: UICollectionViewCell {
         self.beerName.text = beer.name
         self.beerTagline.text = beer.tagLine
         let stringURL = beer.image_url
-        let url = (URL(string: stringURL))!
+        let url = URL(string: stringURL)
         self.beerImage.populateImage(withURL: url)
+        beerImage.activityIndicator.isHidden = true
         manageFavouriteIndicator(beerID: beer.id)
     }
     
     func manageFavouriteIndicator(beerID: Int) {
         if #available(iOS 13.0, *) {
-            if UserDefaults.standard.checkIfFavourite(beerID: beerID) {
+            if FavouriteBeersManager.shared.checkIfFavourite(beerID: beerID) {
                 self.favouriteIndicator.image = UIImage(systemName: "heart.fill")
                 self.favouriteIndicator.tintColor = .red
             } else {
@@ -54,8 +55,9 @@ class CarouselCell: UICollectionViewCell {
     }
     
     @IBAction func favouriteButtonPressed(_ sender: UIButton) {
-        let beerID = imageTapped?(self)
-        manageFavouriteIndicator(beerID: beerID!)
+        if let beerID = imageTapped?(self) {
+            manageFavouriteIndicator(beerID: beerID)
+        }
     }
     
     override func layoutSubviews() {

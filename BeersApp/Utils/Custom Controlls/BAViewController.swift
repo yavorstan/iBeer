@@ -45,7 +45,15 @@ class BAViewController: UIViewController {
             HUD.hide()
             HUD.flash(.label("Something went wrong!"), delay: 1.0)
         }
-        
+    }
+    
+    func placeBackgroundAtForemostPostition(background: BABackground) {
+        background.alpha = 1
+        self.view.insertSubview(background, at: self.view.subviews.count)
+    }
+    func placeBackgroundAtLastPosition(background: BABackground){
+        background.alpha = 0.8
+        self.view.insertSubview(background, at: 0)
     }
 }
 

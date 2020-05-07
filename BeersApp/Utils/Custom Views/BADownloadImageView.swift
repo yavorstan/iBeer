@@ -40,9 +40,13 @@ class BADownloadImageView: UIView {
         self.activityIndicator.startAnimating()
     }
     
-    func populateImage(withURL: URL){
-        imageView.kf.setImage(with: withURL)
-        self.activityIndicator.stopAnimating()
-        self.activityIndicator.isHidden = true
+    func populateImage(withURL: URL?){
+        if withURL == nil || withURL?.absoluteString == "" {
+            imageView.image = UIImage(named: "beerStockPhoto")
+        } else {
+            imageView.kf.setImage(with: withURL)
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+        }
     }
 }

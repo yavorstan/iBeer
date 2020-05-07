@@ -1,0 +1,123 @@
+/* 
+  Localizable.strings
+  BeersApp
+
+  Created by Yavor Stanoev on 3.04.20.
+  Copyright © 2020 Yavor Stanoev. All rights reserved.
+*/
+
+//MARK: Favourites Screen
+
+"str_no_fav_beers" = "Нямате любими бири!";
+
+"str_warning" = "ВНИМАНИЕ";
+
+"str_remove_beer_warning" = "Сигурни ли сте, че искате да премахнете '%@' от Любими?";
+
+"yes" = "Да";
+
+"no" = "Не";
+
+"str_beer_removed_from_fav" = "Премахната от Любими!";
+
+"str_max_fav_beers" = "Максимално 15 бири в Любими!";
+
+//MARK: Home Screen
+
+"str_search_placeholder" = "Търсене на бира по име...";
+
+//Filters
+
+"yeast" = "Мая";
+
+"hops" = "Хмел";
+
+"malt" = "Малц";
+
+"food" = "Храна";
+
+"from" = "от";
+
+"to" = "до";
+
+"brewed" = "Създаден";
+
+"before" = "преди";
+
+"after" = "след";
+
+"str_no_beers_matching_parameters" = "Не са намерени бири \n по въведените параметри!";
+
+"str_wrong_input" = "Грешни данни!";
+
+"str_clear" = "Изчисти филтрите";
+
+//"btn_search" = "Search";
+
+//MARK: Settings Screen
+
+"str_logout" = "Сигурни ли сте, че искате да излезете?";
+
+"str_logged_out" = "Излизане";
+
+"str_pages" = "Брой бири на страница";
+
+"str_language" = "Език";
+
+"str_language_change_12" = "Приложението трябва да се рестартира за да се обновят промените!";
+
+"str_ok" = "Добре";
+
+"str_developer_page" = "Страница на разработчика";
+
+"str_about_us" = "За нас";
+
+"str_reward_ad" = "Вие спечелихте 5 звездички!";
+
+"str_watch_ad" = "Гледай реклама";
+
+"str_watch_button" = "Видео";
+
+"str_allow_ads" = "Спри рекламите";
+
+//MARK: Beer Details
+
+"abv" = "Алкохолното съдържание (абривиетура ABV или alc/vol) е стандартната мярка за количеството алкохол, съдържано в дадено количество спиртна напитка.";
+
+"ibu" = "Международна Мярка за Горчивина (International Bitterness Unit или IBU) е създадена, защото е било трудно да се определи колко е 'горчива' една бира, точно както е трудно да се определи колко е 'комфортна' дадена дреха... Всичко е било въпрос на възприятие.";
+
+"ebc" = "Мерна единица за цвета на бирата, определяща се от Европейската Пивоварна Асоциация.";
+
+"date" = "Създадена: ";
+
+"description" = "Описание: ";
+
+"goes_well" = "Комбинира се добре със: ";
+
+"brewing_tips" = "Съвети за производство: ";
+
+//Malt, hops and yeast from Filters
+
+"contributor" = "Добавена от: ";
+
+//Facebook Sharing
+
+"str_share_successful" = "Успешно споделяне!";
+
+"str_share_error" = "Изникна проблем!";
+
+"str_share_canceled" = "Споделянето отменено!";
+
+//MARK: Custom Accessory View
+
+"btn_done" = "Готово";
+
+"btn_clear" = "Изчисти";
+
+//MARK: Developer Page
+
+"str_phone_popup" = "Това ще набере избрания номер от телефона Ви. Сигурни ли се?";
+
+"str_email_popup" = "Това ще отвори приложението Ви за електронни писма. Сигурни ли сте?";
+
+"str_linkedin_popup" = "Това ще Ви пренасочи към LinkedIn. Сигурни ли сте?";

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BADateFilterView" customModule="iBeer" customModuleProvider="target">
+            <connections>
+                <outlet property="brewedLabel" destination="zqa-kH-JyT" id="YAZ-A9-MH2"/>
+                <outlet property="label" destination="sgk-8e-QlZ" id="rrx-BJ-Nhb"/>
+                <outlet property="mainView" destination="iN0-l3-epB" id="NTm-Kw-ZIL"/>
+                <outlet property="textField" destination="9ua-Ax-3kn" id="VGy-PA-T5o"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="310" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J58-8m-MmR">
+                    <rect key="frame" x="30" y="0.0" width="250" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brewed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqa-kH-JyT" customClass="BALabel" customModule="iBeer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="19.5" width="58" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ua-Ax-3kn" customClass="BATextField" customModule="iBeer" customModuleProvider="target">
+                            <rect key="frame" x="150" y="13" width="100" height="34"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="kfl-Zh-aK7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="datePicker:" destination="-1" eventType="editingDidBegin" id="ett-Wd-Gyg"/>
+                            </connections>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgk-8e-QlZ" customClass="BALabel" customModule="iBeer" customModuleProvider="target">
+                            <rect key="frame" x="101" y="19.5" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="1Mq-FA-9dN"/>
+                        <constraint firstItem="9ua-Ax-3kn" firstAttribute="leading" secondItem="sgk-8e-QlZ" secondAttribute="trailing" constant="7" id="I5w-5d-vrL"/>
+                        <constraint firstAttribute="height" constant="60" id="SKb-gg-XH0"/>
+                        <constraint firstItem="zqa-kH-JyT" firstAttribute="centerY" secondItem="J58-8m-MmR" secondAttribute="centerY" id="bea-ci-bnF"/>
+                        <constraint firstItem="sgk-8e-QlZ" firstAttribute="centerY" secondItem="J58-8m-MmR" secondAttribute="centerY" id="gPi-CI-zvq"/>
+                        <constraint firstItem="9ua-Ax-3kn" firstAttribute="centerY" secondItem="J58-8m-MmR" secondAttribute="centerY" id="mEh-zi-a2Q"/>
+                        <constraint firstAttribute="trailing" secondItem="9ua-Ax-3kn" secondAttribute="trailing" id="miC-of-J3k"/>
+                        <constraint firstItem="zqa-kH-JyT" firstAttribute="leading" secondItem="J58-8m-MmR" secondAttribute="leading" id="td8-Cr-oC6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="J58-8m-MmR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="QKo-DA-m1J"/>
+                <constraint firstItem="J58-8m-MmR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="y9L-9G-xA7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.8840579710145" y="134.59821428571428"/>
+        </view>
+    </objects>
+</document>

@@ -18,7 +18,7 @@ class BeerDetailsResponseManager: ResponseManager {
             var beerListModel = [BeerDetailsModel]()
             
             for beer in decodedData {
-                beerListModel.append(BeerDetailsModel(id: beer.id, name: beer.name, tagLine: beer.tagline, image_url: beer.image_url ?? URLConstants.defaultImageForBeer, description: beer.description, abv: beer.abv ?? -1, ibu: beer.ibu ?? -1, ebc: beer.ebc ?? -1, malt: beer.ingredients.malt, hops: beer.ingredients.hops, yeast: beer.ingredients.yeast))
+                beerListModel.append(BeerDetailsModel(id: beer.id, name: beer.name, tagLine: beer.tagline, image_url: beer.image_url ?? "", description: beer.description, firstBrewed: beer.first_brewed, foodPairing: beer.food_pairing, brewingTips: beer.brewers_tips, contributedBy: beer.contributed_by, abv: beer.abv ?? -1, ibu: beer.ibu ?? -1, ebc: beer.ebc ?? -1, malt: beer.ingredients.malt, hops: beer.ingredients.hops, yeast: beer.ingredients.yeast ?? "n/a"))
             }
             
             return beerListModel

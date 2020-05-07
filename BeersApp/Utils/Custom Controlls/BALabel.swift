@@ -10,6 +10,21 @@ import UIKit
 
 class BALabel: UILabel {
     override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setup()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+        self.setup()
+    }
+    
+    private func setup() {
         self.textColor = UIColor.DefaultTextColor.color
         self.font = UIFont.defaultTitleFont.font
     }

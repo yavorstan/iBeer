@@ -22,4 +22,7 @@ extension UIColor {
     struct DefaultBackgroundViewColor {
         static let color = UIColor(named: "defaultBackgroundViewColor")
     }
+    struct DefaultFiltersViewColor {
+        static let color = UIColor(named: "defaultFiltersViewColor")
+    }
 }

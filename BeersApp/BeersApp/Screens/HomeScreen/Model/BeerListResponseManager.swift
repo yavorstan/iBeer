@@ -19,7 +19,7 @@ class BeerListResponseManager: ResponseManager {
             var beerListModel = [BeersListModel]()
             
             for beer in decodedData {
-                beerListModel.append(BeersListModel(id: beer.id, name: beer.name, tagLine: beer.tagline, image_url: beer.image_url ?? "https://media-public.canva.com/MADGxu2zqjY/4/thumbnail_large.png"))
+                beerListModel.append(BeersListModel(id: beer.id, name: beer.name, tagLine: beer.tagline, image_url: beer.image_url ?? ""))
             }
             
             return beerListModel

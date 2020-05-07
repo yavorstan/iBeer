@@ -20,7 +20,6 @@ class ResponseManager {
         /*
          Method must be overriden!
          */
-        print("BAM")
         return nil
     }
 }

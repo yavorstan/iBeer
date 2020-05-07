@@ -12,9 +12,23 @@ class BABackground: UIImageView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.image = #imageLiteral(resourceName: "background")
+        self.setup()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+        self.setup()
+    }
+    
+    private func setup() {
+        self.image = UIImage(named: "background")
         self.contentMode = .scaleAspectFill
-        self.alpha = 0.9
+        self.alpha = 0.8
     }
     
 }

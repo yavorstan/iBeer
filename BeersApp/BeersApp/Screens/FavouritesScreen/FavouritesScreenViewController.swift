@@ -9,8 +9,11 @@
 import UIKit
 import SCLAlertView
 import UPCarouselFlowLayout
+import GoogleMobileAds
 
 class FavouritesScreenViewController: BAViewController {
+    
+    @IBOutlet weak var favouritesButton: UITabBarItem!
     
     @IBOutlet weak var carouselCollectionView: UICollectionView!
     
@@ -20,6 +23,8 @@ class FavouritesScreenViewController: BAViewController {
     var favouriteBeers = [BeersListModel]()
     
     var selectedBeerId = Int()
+    
+    var bannerView: GADBannerView!
     
     //MARK: Lifecycle Methods
     override func viewWillDisappear(_ animated: Bool) {
@@ -31,23 +36,28 @@ class FavouritesScreenViewController: BAViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.navigationItem.rightBarButtonItems = []
-        if UserDefaults.standard.getFavouriteBeersArray() == nil || UserDefaults.standard.getFavouriteBeersArray()!.isEmpty {
+        if FavouriteBeersManager.shared.getFavouriteBeersArray() == nil || FavouriteBeersManager.shared.getFavouriteBeersArray()!.isEmpty {
             tableView.isHidden = true
             carouselCollectionView.isHidden = true
             emptyTableLabel.isHidden = false
-            emptyTableLabel.text = "You have no favourite beers!"
+            emptyTableLabel.text = NSLocalizedString("str_no_fav_beers", comment: "")
         } else if UserDefaults.standard.isCarouselStyle() {
-            favouriteBeers = UserDefaults.standard.getFavouriteBeersArray()!
+            self.carouselCollectionView.setContentOffset(.init(x: 0, y: 0), animated: true)
+            favouriteBeers = FavouriteBeersManager.shared.getFavouriteBeersArray()!
             emptyTableLabel.isHidden = true
             tableView.isHidden = true
             carouselCollectionView.isHidden = false
             carouselCollectionView.reloadData()
         } else {
-            favouriteBeers = UserDefaults.standard.getFavouriteBeersArray()!
+            favouriteBeers = FavouriteBeersManager.shared.getFavouriteBeersArray()!
             emptyTableLabel.isHidden = true
             tableView.isHidden = false
             carouselCollectionView.isHidden = true
             tableView.reloadData()
+        }
+        
+        if !AdvertsManager.shared.userAllowedAdverts {
+            bannerView?.removeFromSuperview()
         }
     }
     override func viewDidLoad() {
@@ -56,6 +66,7 @@ class FavouritesScreenViewController: BAViewController {
         let layout = UPCarouselFlowLayout()
         layout.itemSize = CGSize(width: CarouselConstants.width, height: CarouselConstants.height)
         layout.scrollDirection = .horizontal
+        layout.spacingMode = .fixed(spacing: 25)
         carouselCollectionView.collectionViewLayout = layout
         
         carouselCollectionView.delegate = self
@@ -67,16 +78,35 @@ class FavouritesScreenViewController: BAViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: CellConstants.BeersListCell, bundle: nil), forCellReuseIdentifier: CellConstants.BeersListCell)
     }
+    /* Advert is loaded in viewDidAppear since this is the first time the safe are is known. */
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if AdvertsManager.shared.userAllowedAdverts {
+            self.setupAdverts()
+            AdvertsManager.shared.loadBannerAd(bannerView, view: view)
+        }
+    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to:size, with:coordinator)
+        if AdvertsManager.shared.userAllowedAdverts {
+            coordinator.animate(alongsideTransition: { _ in
+                AdvertsManager.shared.loadBannerAd(self.bannerView, view: self.view)
+            })
+        }
+    }
     
     //MARK: Util Methods
     private func confimBeerRemovalFromFavourites(beer: BeersListModel) {
         let popupManager = PopupManager()
-        popupManager.showConfirmPopup(title: "WARNING", message: "Are you sure you want to remove '\(beer.name)' from favourites?")
+        let title = NSLocalizedString("str_warning", comment: "")
+        let message = String(format: NSLocalizedString("str_remove_beer_warning", comment: ""), beer.name)
+        popupManager.showConfirmPopup(title: title, message: message)
         popupManager.yesTapped = { () in
-            UserDefaults.standard.manageBeer(beer: beer)
-            self.favouriteBeers = UserDefaults.standard.getFavouriteBeersArray()!
+            FavouriteBeersManager.shared.manageBeer(beer: beer)
+            self.favouriteBeers = FavouriteBeersManager.shared.getFavouriteBeersArray()!
             self.checkIfFavouritesListIsEmpty()
             if self.tableView.isHidden {
+                self.carouselCollectionView.setContentOffset(.init(x: self.carouselCollectionView.contentOffset.x - 1, y: 0), animated: true)
                 self.carouselCollectionView.reloadData()
             } else {
                 self.tableView.reloadData()
@@ -88,19 +118,50 @@ class FavouritesScreenViewController: BAViewController {
             tableView.isHidden = true
             carouselCollectionView.isHidden = true
             emptyTableLabel.isHidden = false
-            emptyTableLabel.text = "You have no favourite beers!"
+            emptyTableLabel.text = NSLocalizedString("str_no_fav_beers", comment: "")
         }
     }
     private func goToBeerDetails(for indexPath: IndexPath) {
         print(indexPath.row)
-        selectedBeerId = (favouriteBeers[indexPath.row].id)
+        self.selectedBeerId = (favouriteBeers[indexPath.row].id)
         performSegue(withIdentifier: SegueConstants.goToBeerDetails, sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueConstants.goToBeerDetails  {
             let vc = segue.destination as! BeerDetailsViewController
             vc.selectedBeerId = selectedBeerId
+            vc.url = "\(URLConstants.getBeerById)\(selectedBeerId)"
         }
+    }
+    
+    //MARK: Adverts Methods
+    private func setupAdverts() {
+        bannerView = GADBannerView(adSize: kGADAdSizeFluid)
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = AdvertsConstants.bannerAdUnitID
+        bannerView.rootViewController = self
+        
+        AdvertsManager.shared.loadBannerAd(bannerView, view: view)
+    }
+    private func addBannerViewToView(_ bannerView: GADBannerView) {
+     bannerView.translatesAutoresizingMaskIntoConstraints = false
+     view.addSubview(bannerView)
+     view.addConstraints(
+       [NSLayoutConstraint(item: bannerView,
+                           attribute: .bottom,
+                           relatedBy: .equal,
+                           toItem: bottomLayoutGuide,
+                           attribute: .top,
+                           multiplier: 1,
+                           constant: 0),
+        NSLayoutConstraint(item: bannerView,
+                           attribute: .centerX,
+                           relatedBy: .equal,
+                           toItem: view,
+                           attribute: .centerX,
+                           multiplier: 1,
+                           constant: 0)
+       ])
     }
     
 }
@@ -148,17 +209,22 @@ extension FavouritesScreenViewController: UICollectionViewDataSource {
         }
         return cell
     }
-    
-    //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    //        scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x - 1, y: 0), animated: true)
-    //        return
-    //    }
-    
 }
 
 //MARK: - CarouselDelegate
 extension FavouritesScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         goToBeerDetails(for: indexPath)
+    }
+}
+
+extension FavouritesScreenViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return CarouselCellSize.iPadSize
+        } else {
+            return CarouselCellSize.iPhoneSize
+        }
+        
     }
 }

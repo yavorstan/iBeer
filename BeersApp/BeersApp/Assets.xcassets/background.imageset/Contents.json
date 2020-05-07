@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "background4K.jpg"
+      "filename" : "background4K-darkened-1.jpg"
     },
     {
       "idiom" : "universal",
-      "filename" : "background4K-1.jpg",
+      "filename" : "background4K-darkened.jpg",
       "appearances" : [
         {
           "appearance" : "luminosity",

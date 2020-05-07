@@ -7,9 +7,18 @@
 //
 
 import Foundation
-import PKHUD
 
 extension UserDefaults {
+    
+    //MARK: Check if App is launched for the first time on this device
+    func isFirstLaunch() -> Bool {
+        let isFirstLaunch = !UserDefaults.standard.bool(forKey: UserDefaultsKeys.hasBeenLaunchedBefore.rawValue)
+        if isFirstLaunch {
+            UserDefaults.standard.set(true, forKey: UserDefaultsKeys.hasBeenLaunchedBefore.rawValue)
+            UserDefaults.standard.synchronize()
+        }
+        return isFirstLaunch
+    }
     
     //MARK: Save User Data
     func saveUserInPhoneMemory(user: User){
@@ -32,6 +41,15 @@ extension UserDefaults {
             profilePicture: self.url(forKey: UserDefaultsKeys.profilePicture.rawValue)!
         )
         return user
+    }
+    func hasUserInPhoneMemory() -> Bool {
+        if self.string(forKey: UserDefaultsKeys.idToken.rawValue) == nil {
+            return false
+        }
+        return true
+    }
+    func deleteUserFromPhoneMemory() {
+        set(nil, forKey: UserDefaultsKeys.idToken.rawValue)
     }
     
     //MARK: Theme Mode
@@ -58,65 +76,60 @@ extension UserDefaults {
         return self.bool(forKey: UserDefaultsKeys.notifications.rawValue)
     }
     
-    //MARK: Favourite Beers
-    func manageBeer(beer: BeersListModel){
-        if isFavourite(beer: beer) {
-            UserDefaults.standard.removeBeerFromFavourites(beer: beer)
-        } else {
-            UserDefaults.standard.saveBeerToFavourites(beer: beer)
-        }
+    //MARK: Random Beer
+    func saveRandomBeerSetting(fromFavourites: Bool) {
+        set(fromFavourites, forKey: UserDefaultsKeys.randomBeer.rawValue)
     }
-    private func saveBeerToFavourites(beer: BeersListModel) {
-        if self.getFavouriteBeersArray() == nil {
-            set(try? PropertyListEncoder().encode([BeersListModel]()), forKey: UserDefaultsKeys.favouriteBeersArray.rawValue)
-        }
-        var favouriteBeersArray = self.getFavouriteBeersArray()!
-        if favouriteBeersArray.count < 15 {
-            favouriteBeersArray.append(beer)
-            set(try? PropertyListEncoder().encode(favouriteBeersArray), forKey: UserDefaultsKeys.favouriteBeersArray.rawValue)
-            HUD.flash(.success, delay: 0.5)
-        } else {
-            HUD.flash(.label("Max 15 beers in favourites!"), delay: 1)
-            return
-        }
-    }
-    private func removeBeerFromFavourites(beer: BeersListModel) {
-        var favouriteBeersArray = self.getFavouriteBeersArray()
-        if (favouriteBeersArray?.contains(beer))! {
-            let index = favouriteBeersArray!.firstIndex(of: beer)
-            favouriteBeersArray!.remove(at: index!)
-            HUD.flash(.label("Removed from Favourites"), delay: 0.8)
-        }
-        set(try? PropertyListEncoder().encode(favouriteBeersArray), forKey: UserDefaultsKeys.favouriteBeersArray.rawValue)
-    }
-    func getFavouriteBeersArray() -> [BeersListModel]? {
-        var beerData: [BeersListModel]
-        if let data = value(forKey: UserDefaultsKeys.favouriteBeersArray.rawValue) as? Data {
-            beerData = try! PropertyListDecoder().decode([BeersListModel].self, from: data)
-            return beerData
-        } else {
-            return nil
-        }
-    }
-    func checkIfFavourite(beerID: Int) -> Bool {
-        if self.getFavouriteBeersArray() == nil || self.getFavouriteBeersArray()!.isEmpty {
+    func randomBeerIsFromFavourites() -> Bool {
+        if FavouriteBeersManager.shared.getFavouriteBeersArray()!.isEmpty {
             return false
         }
-        let favouriteBeersArray = self.getFavouriteBeersArray()!
-        for beer in favouriteBeersArray {
-            if beer.id == beerID {
-                return true
-            }
-        }
-        return false
+        return self.bool(forKey: UserDefaultsKeys.randomBeer.rawValue)
     }
-    private func isFavourite(beer: BeersListModel) -> Bool {
-        let favouriteBeersArray = self.getFavouriteBeersArray()
-        return (favouriteBeersArray?.contains(beer))!
+    
+    //MARK: Beers Per Page
+    func saveBeersPerPage(amount: Int) {
+        self.set(amount, forKey: UserDefaultsKeys.beersPerPage.rawValue)
+    }
+    func getBeersPerPage() -> Int? {
+        self.integer(forKey: UserDefaultsKeys.beersPerPage.rawValue)
+    }
+    
+    //MARK: Langauge Change
+    func saveIfLanguageChange(isChanged: Bool) {
+        self.set(isChanged, forKey: UserDefaultsKeys.isLanguageChanged.rawValue)
+    }
+    func isLanguageChanged() -> Bool {
+        self.bool(forKey: UserDefaultsKeys.isLanguageChanged.rawValue)
+    }
+    
+    //MARK: Adverts Settings
+    func saveIfAdvertsAreAllowed(_ areAllowed: Bool) {
+        self.set(areAllowed, forKey: UserDefaultsKeys.adverts.rawValue)
+    }
+    func areAdvertsAllowed() -> Bool {
+        return self.bool(forKey: UserDefaultsKeys.adverts.rawValue)
+    }
+    
+    //MARK: Time
+    func saveDateOfAdTimerStart(date: Date) {
+        self.set(date, forKey: UserDefaultsKeys.time.rawValue)
+    }
+    func getDateOfAdTimerStart() -> Date {
+        return self.object(forKey: UserDefaultsKeys.time.rawValue) as! Date
+    }
+    
+    func saveIfHasTimerForAd(_ hasTimer: Bool) {
+        self.set(hasTimer, forKey: UserDefaultsKeys.hasTimer.rawValue)
+    }
+    func hasTimerForAd() -> Bool {
+        return self.bool(forKey: UserDefaultsKeys.hasTimer.rawValue)
     }
 }
 
-private enum UserDefaultsKeys : String {
+enum UserDefaultsKeys : String {
+    case hasBeenLaunchedBefore
+    
     case idToken
     case firstName
     case lastName
@@ -131,4 +144,18 @@ private enum UserDefaultsKeys : String {
     case notifications
     
     case favouriteBeersArray
+    
+    case randomBeer
+    
+    case beersPerPage
+    
+    case isLanguageChanged
+    
+    case adverts
+    
+    case time
+    
+    case hasTimer
+    
+    case appKilled
 }

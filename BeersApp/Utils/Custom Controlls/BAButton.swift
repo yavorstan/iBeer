@@ -12,6 +12,20 @@ class BAButton: UIButton {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.setup()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.setup()
+    }
+    
+    private func setup() {
         self.layer.cornerRadius = CGFloat(BAButtonConstants.cornerRadius)
         self.layer.shadowOffset = CGSize(width: 0, height: 3)
         self.layer.shadowColor = UIColor.black.cgColor

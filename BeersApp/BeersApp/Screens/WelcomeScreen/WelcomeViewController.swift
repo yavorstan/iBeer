@@ -9,17 +9,21 @@
 import UIKit
 import GoogleSignIn
 import PKHUD
+import Alamofire
+import FBSDKLoginKit
+import GoogleMobileAds
 
 class WelcomeViewController: BAViewController {
-
+    
     @IBOutlet weak var logoImageView: BALogo!
     @IBOutlet weak var logoImageYConstraint: NSLayoutConstraint!
     @IBOutlet weak var signInButton: GIDSignInButton!
-    
+    @IBOutlet weak var fb: FBButton!
+    @IBOutlet weak var googleSignInButton: UIButton!
     
     //MARK: Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
+        super.viewWillAppear(animated)
         logoImageYConstraint.constant = CGFloat(BALogoConstants.startingConstraintConstant)
         self.view.layoutIfNeeded()
     }
@@ -33,55 +37,47 @@ class WelcomeViewController: BAViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        signInButton.backgroundColor = UIColor.DefaultAppColor.color
+        
+        AuthenticationManager.shared.successfulLogin = { () -> Void in
+            self.performSegue(withIdentifier: SegueConstants.goToHome, sender: self)
+        }
         
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        
+        signInButton.style = .wide
+        googleSignInButton.clipsToBounds = false
+        
+        fb.layer.cornerRadius = 5
+        fb.clipsToBounds = true
+        fb.setTitle("Sign in with Facebook", for: .normal)
+        fb.titleLabel?.textAlignment = .center
+        
+        if let token = AccessToken.current,
+            !token.isExpired {
+            AuthenticationManager.shared.getFacebookUserData()
+            self.performSegue(withIdentifier: SegueConstants.goToHome, sender: self)
+        }
     }
     
     //MARK: Button Actions
-    @IBAction func signInButtonPressed(_ sender: Any) {
-        HUD.show(.progress)
-        signInButton.isEnabled = false
-        GIDSignIn.sharedInstance()?.signIn()
-        HUD.hide(animated: true)
-        self.performSegue(withIdentifier: SegueConstants.goToHome, sender: self)
+    @IBAction func googleSignInPressed(_ sender: Any) {
+        AuthenticationManager.shared.login(with: .google)
+    }
+    @IBAction func facebookSignInPressed(_ sender: FBButton) {
+        AuthenticationManager.shared.login(with: .facebook)
     }
     
     //MARK: Utils Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let tabBarController = segue.destination as? UITabBarController
-        tabBarController?.selectedIndex = 1
-    }
-}
-
-//MARK: - GoogleSignInDelegate
-
-extension WelcomeViewController: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-                print("The user has not signed in before or they have since signed out.")
-            } else {
-                print("\(error.localizedDescription)")
-            }
-            return
+        if UserDefaults.standard.isLanguageChanged() {
+            tabBarController?.selectedIndex = 2
+            UserDefaults.standard.saveIfLanguageChange(isChanged: false)
+        } else {
+            tabBarController?.selectedIndex = 1
         }
-        // Perform any operations on signed in user here.
-        let userId = user.userID                  // For client-side use only!
-        let idToken = user.authentication.idToken // Safe to send to the server
-        let fullName = user.profile.name
-        let givenName = user.profile.givenName
-        let familyName = user.profile.familyName
-        let email = user.profile.email
-        var picture = URL(string: URLConstants.defaultImageForUser)
-        if user.profile.hasImage {
-            picture = user.profile.imageURL(withDimension: 200)
-        }
-        let user = User(idToken: idToken!, firstName: givenName!, lastName: familyName!, fullName: fullName!, email: email!, profilePicture: picture!)
-        UserDefaults.standard.saveUserInPhoneMemory(user: user)
-        
-        self.performSegue(withIdentifier: SegueConstants.goToHome, sender: self)
+        tabBarController?.navigationItem.hidesBackButton = true
     }
 }

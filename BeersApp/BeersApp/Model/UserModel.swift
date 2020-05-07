@@ -9,10 +9,12 @@
 import Foundation
 
 struct User {
+    
     let idToken: String
     let firstName: String
     let lastName: String
     let fullName: String
     let email: String
     let profilePicture: URL
+    
 }

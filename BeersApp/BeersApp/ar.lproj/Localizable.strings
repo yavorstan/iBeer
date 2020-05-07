@@ -1,0 +1,123 @@
+/* 
+  Localizable.strings
+  BeersApp
+
+  Created by Yavor Stanoev on 3.04.20.
+  Copyright © 2020 Yavor Stanoev. All rights reserved.
+*/
+
+//MARK: Favourites Screen
+
+"str_no_fav_beers" = "ليس لديك البيرة المفضلة!";
+
+"str_warning" = "تحذير";
+
+"str_remove_beer_warning" = "هل أنت متأكد من أنك تريد إزالة '%@' من المفضلة؟";
+
+"yes" = "نعم";
+
+"no" = "لا";
+
+"str_beer_removed_from_fav" = "تمت الإزالة من المفضلة!";
+
+"str_max_fav_beers" = "15 بيرة كحد أقصى في المفضلة!";
+
+//MARK: Home Screen
+
+"str_search_placeholder" = "بحث بيرة طريق الاسم...";
+
+//Filters
+
+"yeast" = "خميرة";
+
+"hops" = "القفزات";
+
+"malt" = "شراب الشعير";
+
+"food" = "طعام";
+
+"from" = "من عند";
+
+"to" = "إلى";
+
+"brewed" = "يخمر";
+
+"before" = "قبل";
+
+"after" = "بعد";
+
+"str_no_beers_matching_parameters" = "لم يتم العثور على بيرز مطابق لمعلماتك!";
+
+"str_wrong_input" = "إدخال خاطئ!";
+
+//"btn_search" = "Search";
+
+//MARK: Settings Screen
+
+"str_logout" = "هل أنت متأكد أنك تريد تسجيل الخروج؟";
+
+"str_logged_out" = "تسجيل الخروج";
+
+"str_pages" = "البير صفحة";
+
+"str_language" = "لغة";
+
+"str_language_change_12" = "يجب إعادة تشغيل التطبيق حتى يصبح ساري المفعول!";
+
+"str_ok" = "حسنا";
+
+"str_clear" = "مرشحات";
+
+"str_developer_page" = "صفحة المطور";
+
+"str_about_us" = "معلومات عنا";
+
+"str_reward_ad" = "لقد تم منحك 5 نجوم!";
+
+"str_watch_ad" = "مشاهدة إعلان";
+
+"str_watch_button" = "راقب";
+
+"str_allow_ads" = "السماح بالإعلانات";
+
+//MARK: Beer Details
+
+"abv" = "الكحول من حيث الحجم (يُختصر باسم ABV أو abv أو alc / vol) هو مقياس قياسي لكمية الكحول الموجودة في حجم معين من المشروبات الكحولية.";
+
+"ibu" = "تم اختراع وحدة المرارة الدولية (أو) أو IBU لأنه كان من الصعب قياس مدى 'المر' في البيرة ، تمامًا مثل صعوبة قياس مدى 'راحة' السترة المفضلة لديك ... كان كل نع الجعة الأوروبيةنع الجعة الأوروبيةنع الجعة الأوروبية شيء يتعلق بالإدراك نع الجعة الأوروبية.";
+
+"ebc" = "تشير وحدات اللون EBC (اتفاقية مصنع الجعة الأوروبية) إلى لون الجعة المقاسة بطريقةنع الجعة الأوروبيةنع الجعة الأوروبية فنية.";
+
+"date" = "يخمر أولا في: ";
+
+"description" = "وصف: ";
+
+"goes_well" = "يسير بشكل جيد مع: ";
+
+"brewing_tips" = "نصائح تختمر: ";
+
+//Malt, hops and yeast from Filters
+
+"contributor" = "مساهم: ";
+
+//Facebook Sharing
+
+"str_share_successful" = "مشاركة ناجحة!";
+
+"str_share_error" = "كان هناك خطأ!";
+
+"str_share_canceled" = "تم إلغاء المشاركة!";
+
+//MARK: Custom Accessory View
+
+"btn_done" = "منجز";
+
+"btn_clear" = "واضح";
+
+//MARK: Developer Page
+
+"str_phone_popup" = "سيؤدي هذا إلى إجراء مكالمة هاتفية. هل أنت واثق؟";
+
+"str_email_popup" = "سيؤدي هذا إلى فتح تطبيق البريد الإلكتروني الافتراضي. هل أنت واثق؟";
+
+"str_linkedin_popup" = "سيؤدي هذا إلى إعادة توجيهك إلى LinkedIn. هل أنت واثق؟";
