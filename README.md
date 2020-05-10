@@ -1,8 +1,12 @@
 # iBeer - Brewery App
+
 #### iOS App for beer lovers and enthusiasts :beers:
+<p align="center">
+  <img src="Images/logo.png" width="180">
+</p>
 
-
-iBeer is a free, open-source iOS application with detailed information about different beers written using Swift 5 and available for iOS 12 and above.
+## Main functionality
+***iBeer*** is a free, open-source iOS application with detailed information about different beers written using Swift 5 and available for iOS 12 and above.
 
   - Login with a social media profile
   - Listing of different beers
@@ -20,17 +24,17 @@ iBeer is a free, open-source iOS application with detailed information about dif
     - Number off beers in the home page
 
 
-### API's
-
-iBeer uses a number of open source API's in order to work properly:
+## API's
+***iBeer*** uses a number of open-source API's in order to work properly:
+  
 * [Google SignIn] - Google account sign-in and authentication
 * [Facebook SignIn] - The same but with a Facebook account
+* [Firebase] - Email Authentication and Crashlytics
 *  [Google AdMob] - Google's API for adverts
 *  [Alamofire] - Alamofire is an HTTP networking library written in Swift.
 * [PKHUD] - A Swift based reimplementation of the Apple HUD
 * [Kingfisher] - Kingfisher is a powerful, pure-Swift library for downloading and caching images from the web.
 * [SCLAlertView] - Animated Alert View written in Swift, which can be used as a UIAlertView or UIAlertController replacement.
-
 
 
 ###### *This app also uses the 'Punk API' for it's data which you can find here -> https://punkapi.com/documentation/v2*
@@ -42,6 +46,7 @@ iBeer uses a number of open source API's in order to work properly:
    [Google SignIn]: https://developers.google.com/identity/sign-in/ios?
    [Facebook SignIn]: <https://developers.facebook.com/docs/ios/>
    [Google AdMob]: <https://developers.google.com/admob/ios/quick-start>
+   [Firebase]: <https://firebase.google.com/>
    [Alamofire]: <https://github.com/Alamofire/Alamofire>
    [PKHUD]: <https://github.com/pkluz/PKHUD>
    [Kingfisher]: <https://github.com/onevcat/Kingfisher>
