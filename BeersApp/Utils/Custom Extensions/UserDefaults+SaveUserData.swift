@@ -125,6 +125,24 @@ extension UserDefaults {
     func hasTimerForAd() -> Bool {
         return self.bool(forKey: UserDefaultsKeys.hasTimer.rawValue)
     }
+    
+    //MARK: Email Login
+    func savePreviousLogin() {
+        self.set(true, forKey: UserDefaultsKeys.previousLogin.rawValue)
+    }
+    func removePreviousLogin() {
+        self.set(false, forKey: UserDefaultsKeys.previousLogin.rawValue)
+    }
+    func hasPreviousLogin() -> Bool {
+        return self.bool(forKey: UserDefaultsKeys.previousLogin.rawValue)
+    }
+    
+    func saveUserEmail(email: String) {
+        self.set(email, forKey: UserDefaultsKeys.emailForLogin.rawValue)
+    }
+    func getEmailForLogin() -> String {
+        return self.string(forKey: UserDefaultsKeys.emailForLogin.rawValue)!
+    }
 }
 
 enum UserDefaultsKeys : String {
@@ -158,4 +176,8 @@ enum UserDefaultsKeys : String {
     case hasTimer
     
     case appKilled
+    
+    case previousLogin
+    
+    case emailForLogin
 }

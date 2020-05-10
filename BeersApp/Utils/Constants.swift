@@ -40,6 +40,8 @@ struct SegueConstants {
     static let goToHome = "goToHome"
     static let goToBeerDetails = "goToBeerDetails"
     static let goToFilterScreen = "goToFilterScreen"
+    static let goToLogin = "goToLogin"
+    static let goToRegister = "goToRegister"
 }
 
 struct CellConstants {

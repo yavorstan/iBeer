@@ -11,11 +11,13 @@ import PKHUD
 import Alamofire
 import GoogleSignIn
 import FBSDKLoginKit
+import Firebase
 
 //MARK: Authentication Types
 public enum AuthenticationTypes {
     case google
     case facebook
+    case email
 }
 
 //MARK: Authentiacion Manager
@@ -25,7 +27,11 @@ class AuthenticationManager {
     private init(){}
     
     var successfulLogin: (() -> ())?
+    var unsuccessfulLogin: (() -> ())?
+    
     var successfulLogout: (() -> ())?
+    
+    var loginInformation: AnyObject?
     
     //MARK: Login
     func login(with loginType: AuthenticationTypes) {
@@ -34,9 +40,11 @@ class AuthenticationManager {
             loginWithGoogle()
         case .facebook:
             loginWithFacebook()
+        case .email:
+            loginWithEmail()
         }
     }
-
+    
     //MARK: Logout
     func logout(authenticationType auth: AuthenticationTypes){
         let popupManager = PopupManager()
@@ -50,6 +58,14 @@ class AuthenticationManager {
             case .facebook:
                 let loginManager = LoginManager()
                 loginManager.logOut()
+            case .email:
+                let firebaseAuth = Auth.auth()
+                do {
+                    UserDefaults.standard.removePreviousLogin()
+                    try firebaseAuth.signOut()
+                } catch let signOutError as NSError {
+                    print ("Error signing out: %@", signOutError)
+                }
             }
             UserDefaults.standard.deleteUserFromPhoneMemory()
             SessionManager.shared.deleteCurrentSession()
@@ -87,6 +103,18 @@ class AuthenticationManager {
         }
     }
     
+    //Prepare for segueing into the application
+    func prepareToGoToHomeScreen(segue: UIStoryboardSegue) {
+        let tabBarController = segue.destination as? UITabBarController
+        if UserDefaults.standard.isLanguageChanged() {
+            tabBarController?.selectedIndex = 2
+            UserDefaults.standard.saveIfLanguageChange(isChanged: false)
+        } else {
+            tabBarController?.selectedIndex = 1
+        }
+        tabBarController?.navigationItem.hidesBackButton = true
+    }
+    
 }
 
 //MARK: - Google Login
@@ -94,6 +122,24 @@ private func loginWithGoogle() {
     GIDSignIn.sharedInstance()?.signIn()
 }
 extension WelcomeViewController: GIDSignInDelegate {
+    
+    
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        
+    }
+    
+    // Present a view that prompts the user to sign in with Google
+    func sign(_ signIn: GIDSignIn!,
+              present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    func sign(_ signIn: GIDSignIn!,
+              dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
@@ -118,7 +164,7 @@ extension WelcomeViewController: GIDSignInDelegate {
         
         if URLConstants.mainURL == URLConstants.punkAPI || UserDefaults.standard.hasUserInPhoneMemory() {
             UserDefaults.standard.saveUserInPhoneMemory(user: user)
-    
+            
             SessionManager.shared.setCurrentSession(user: user, auth: .google)
             
             AuthenticationManager.shared.successfulLogin!()
@@ -158,3 +204,29 @@ private func loginWithFacebook() {
         }
     })
 }
+
+//MARK: - Email Login
+extension AuthenticationManager {
+    private func loginWithEmail() {
+        let loginInfo = self.loginInformation as! [String]
+        
+        let email = loginInfo[0]
+        let password = loginInfo[1]
+        
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            guard self != nil else { return }
+            if error != nil {
+                self?.unsuccessfulLogin!()
+            } else {
+                let user = User(idToken: nil, firstName: nil, lastName: nil, fullName: nil, email: email, profilePicture: nil)
+                SessionManager.shared.setCurrentSession(user: user, auth: .email)
+                
+                UserDefaults.standard.savePreviousLogin()
+                UserDefaults.standard.saveUserEmail(email: email)
+                
+                self?.successfulLogin!()
+            }
+        }
+    }
+}
+

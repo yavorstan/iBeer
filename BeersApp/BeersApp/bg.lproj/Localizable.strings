@@ -121,3 +121,27 @@
 "str_email_popup" = "Това ще отвори приложението Ви за електронни писма. Сигурни ли сте?";
 
 "str_linkedin_popup" = "Това ще Ви пренасочи към LinkedIn. Сигурни ли сте?";
+
+//MARK: Login and Register
+
+"str_email" = "Имейл";
+
+"str_password" = "Парола";
+
+"str_incorrect_credentials" = "Грешни данни!";
+
+"str_repeat_password" = "Повторете паролата";
+
+"str_error_creating_user" = "Грешка при регистриране!";
+
+"str_invalid_email" = "Невалиден имейл!";
+
+"str_invalid_password" = "Невалидна парола!";
+
+"str_password_info" = "Паролата трябва да съдържа поне 8 символа, поне една голяма и поне една малка буква и едно число!";
+
+"str_passwords_dont_match" = "Паролите не съвпадат!";
+
+"str_login" = "Вход";
+
+"str_register" = "Регистрация";

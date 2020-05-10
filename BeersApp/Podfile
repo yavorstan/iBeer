@@ -19,6 +19,9 @@ target 'BeersApp' do
   pod 'FBSDKShareKit'
   pod 'FBSDKPlacesKit'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'LGButton'
   
 end
 

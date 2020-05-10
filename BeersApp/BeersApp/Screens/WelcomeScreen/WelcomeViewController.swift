@@ -12,18 +12,21 @@ import PKHUD
 import Alamofire
 import FBSDKLoginKit
 import GoogleMobileAds
+import LGButton
 
 class WelcomeViewController: BAViewController {
     
     @IBOutlet weak var logoImageView: BALogo!
     @IBOutlet weak var logoImageYConstraint: NSLayoutConstraint!
-    @IBOutlet weak var signInButton: GIDSignInButton!
-    @IBOutlet weak var fb: FBButton!
-    @IBOutlet weak var googleSignInButton: UIButton!
     
     //MARK: Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        AuthenticationManager.shared.successfulLogin = { () -> Void in
+            self.performSegue(withIdentifier: SegueConstants.goToHome, sender: self)
+        }
+        
         logoImageYConstraint.constant = CGFloat(BALogoConstants.startingConstraintConstant)
         self.view.layoutIfNeeded()
     }
@@ -46,38 +49,36 @@ class WelcomeViewController: BAViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         
-        signInButton.style = .wide
-        googleSignInButton.clipsToBounds = false
-        
-        fb.layer.cornerRadius = 5
-        fb.clipsToBounds = true
-        fb.setTitle("Sign in with Facebook", for: .normal)
-        fb.titleLabel?.textAlignment = .center
-        
         if let token = AccessToken.current,
             !token.isExpired {
             AuthenticationManager.shared.getFacebookUserData()
             self.performSegue(withIdentifier: SegueConstants.goToHome, sender: self)
         }
+        
+        if UserDefaults.standard.hasPreviousLogin() {
+            let email = UserDefaults.standard.getEmailForLogin()
+            let user = User(idToken: nil, firstName: nil, lastName: nil, fullName: nil, email: email, profilePicture: nil)
+            
+            SessionManager.shared.setCurrentSession(user: user, auth: .email)
+            self.performSegue(withIdentifier: SegueConstants.goToHome, sender: self)
+        }
     }
     
     //MARK: Button Actions
-    @IBAction func googleSignInPressed(_ sender: Any) {
+    @IBAction func continueWithGooglePressed(_ sender: LGButton) {
         AuthenticationManager.shared.login(with: .google)
     }
-    @IBAction func facebookSignInPressed(_ sender: FBButton) {
+    @IBAction func continueWithFacebookPressed(_ sender: LGButton) {
         AuthenticationManager.shared.login(with: .facebook)
+    }
+    @IBAction func continueWithEmailPressed(_ sender: LGButton) {
+        performSegue(withIdentifier: SegueConstants.goToLogin, sender: self)
     }
     
     //MARK: Utils Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tabBarController = segue.destination as? UITabBarController
-        if UserDefaults.standard.isLanguageChanged() {
-            tabBarController?.selectedIndex = 2
-            UserDefaults.standard.saveIfLanguageChange(isChanged: false)
-        } else {
-            tabBarController?.selectedIndex = 1
+        if segue.identifier == SegueConstants.goToHome {
+            AuthenticationManager.shared.prepareToGoToHomeScreen(segue: segue)
         }
-        tabBarController?.navigationItem.hidesBackButton = true
     }
 }

@@ -10,6 +10,277 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Register-->
+        <scene sceneID="4PN-Q5-59Y">
+            <objects>
+                <viewController id="cmx-2k-z1i" customClass="RegisterViewController" customModule="iBeer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FyH-5u-mnm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0jI-g5-xD6" customClass="BABackground" customModule="iBeer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w7z-2r-sBs" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="10" y="10" width="210" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" name="defaultAppColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showTouchFeedback" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Register"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" name="defaultTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="DDr-o3-SJi" eventType="touchUpInside" id="MeE-O0-ftl"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HaX-dn-eQk" customClass="BATextFilterView" customModule="iBeer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="348" width="414" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="r3Q-T4-DjM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lsn-TS-Vti" customClass="BATextFilterView" customModule="iBeer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="418" width="414" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="FuB-mV-7EF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saE-1r-RS4" customClass="BATextFilterView" customModule="iBeer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="488" width="414" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ew5-yY-bs5"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWl-67-S9J" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="102" y="702" width="210" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="7RO-p2-VE7"/>
+                                    <constraint firstAttribute="height" constant="40" id="jzo-xk-ye2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" name="defaultRegisterButtonColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" name="defaultRegisterButtonTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Register"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="cmx-2k-z1i" eventType="touchUpInside" id="lgP-JR-sFr"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhE-33-yl1">
+                                <rect key="frame" x="102" y="694" width="210" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="Mto-Tf-6RP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.85820550877157364" green="0.072124321421226475" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Lsn-TS-Vti" firstAttribute="trailing" secondItem="HaX-dn-eQk" secondAttribute="trailing" id="23c-b1-qTM"/>
+                            <constraint firstItem="0jI-g5-xD6" firstAttribute="trailing" secondItem="cXK-bJ-RNX" secondAttribute="trailing" id="44J-xs-b9g"/>
+                            <constraint firstItem="Lsn-TS-Vti" firstAttribute="centerY" secondItem="0jI-g5-xD6" secondAttribute="centerY" id="50t-V9-Kdu"/>
+                            <constraint firstItem="0jI-g5-xD6" firstAttribute="top" secondItem="FyH-5u-mnm" secondAttribute="top" id="844-6l-t2q"/>
+                            <constraint firstItem="VhE-33-yl1" firstAttribute="centerX" secondItem="FyH-5u-mnm" secondAttribute="centerX" id="GE7-cJ-uhK"/>
+                            <constraint firstItem="NWl-67-S9J" firstAttribute="top" secondItem="VhE-33-yl1" secondAttribute="bottom" constant="8" id="U9Z-H6-xjF"/>
+                            <constraint firstItem="Lsn-TS-Vti" firstAttribute="top" secondItem="HaX-dn-eQk" secondAttribute="bottom" constant="10" id="UUQ-zz-5C7"/>
+                            <constraint firstAttribute="bottom" secondItem="0jI-g5-xD6" secondAttribute="bottom" id="VfD-Ox-t9W"/>
+                            <constraint firstItem="Lsn-TS-Vti" firstAttribute="trailing" secondItem="saE-1r-RS4" secondAttribute="trailing" id="W7t-FQ-pXF"/>
+                            <constraint firstItem="Lsn-TS-Vti" firstAttribute="leading" secondItem="0jI-g5-xD6" secondAttribute="leading" id="bVh-ni-Mcz"/>
+                            <constraint firstItem="NWl-67-S9J" firstAttribute="centerX" secondItem="FyH-5u-mnm" secondAttribute="centerX" id="bhm-3E-117"/>
+                            <constraint firstItem="Lsn-TS-Vti" firstAttribute="leading" secondItem="HaX-dn-eQk" secondAttribute="leading" id="ePj-uu-8D6"/>
+                            <constraint firstItem="cXK-bJ-RNX" firstAttribute="bottom" secondItem="NWl-67-S9J" secondAttribute="bottom" constant="120" id="fB1-Dt-jg0"/>
+                            <constraint firstItem="0jI-g5-xD6" firstAttribute="leading" secondItem="cXK-bJ-RNX" secondAttribute="leading" id="kex-ZJ-baD"/>
+                            <constraint firstItem="saE-1r-RS4" firstAttribute="top" secondItem="Lsn-TS-Vti" secondAttribute="bottom" constant="10" id="vDe-Zi-rFK"/>
+                            <constraint firstItem="Lsn-TS-Vti" firstAttribute="leading" secondItem="saE-1r-RS4" secondAttribute="leading" id="yId-kZ-fib"/>
+                            <constraint firstItem="Lsn-TS-Vti" firstAttribute="trailing" secondItem="0jI-g5-xD6" secondAttribute="trailing" id="zae-m8-KwH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cXK-bJ-RNX"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Register" id="f60-Zc-Foq"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="HaX-dn-eQk" id="6tT-bG-RsN"/>
+                        <outlet property="passwordTextField" destination="Lsn-TS-Vti" id="wRH-ew-CkM"/>
+                        <outlet property="registerButton" destination="NWl-67-S9J" id="6TK-Qe-02y"/>
+                        <outlet property="repeatPasswordTextfield" destination="saE-1r-RS4" id="Jaj-ER-T2x"/>
+                        <outlet property="wrongInputLabel" destination="VhE-33-yl1" id="FE9-5Q-9GN"/>
+                        <segue destination="nxF-Rp-9VJ" kind="show" identifier="goToHome" id="unJ-bG-fDb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfY-Zh-FWA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2660.8695652173915" y="-1335.2678571428571"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="6QH-hP-hpb">
+            <objects>
+                <viewController id="DDr-o3-SJi" customClass="LoginViewController" customModule="iBeer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r1P-hM-t5e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N51-Q1-Aqr" customClass="BABackground" customModule="iBeer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4H-t0-mKx" customClass="BATextFilterView" customModule="iBeer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="348" width="414" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="co9-pc-6rV"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVe-ez-ptP" customClass="BATextFilterView" customModule="iBeer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="418" width="414" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="7RO-1N-MXt"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TlH-3W-Y8Y" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="102" y="652" width="210" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="31J-8o-dhU"/>
+                                    <constraint firstAttribute="width" constant="210" id="h8G-yG-iqU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Login"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" name="defaultAppColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" name="defaultTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="DDr-o3-SJi" eventType="touchUpInside" id="uCc-XC-7Yo"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh3-Tf-dmj">
+                                <rect key="frame" x="102" y="647" width="210" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="pmL-vw-nFU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.056107677723830074" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcK-tl-DWs" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="102" y="702" width="210" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" name="defaultRegisterButtonColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showTouchFeedback" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Register"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" name="defaultRegisterButtonTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="DDr-o3-SJi" eventType="touchUpInside" id="CdZ-pA-xCw"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="N51-Q1-Aqr" firstAttribute="leading" secondItem="6pH-cr-Cii" secondAttribute="leading" id="3wI-Gx-Z3A"/>
+                            <constraint firstItem="pcK-tl-DWs" firstAttribute="top" secondItem="TlH-3W-Y8Y" secondAttribute="bottom" constant="10" id="6kd-if-7aS"/>
+                            <constraint firstItem="yVe-ez-ptP" firstAttribute="centerX" secondItem="r1P-hM-t5e" secondAttribute="centerX" id="8ji-Q2-5AZ"/>
+                            <constraint firstItem="U4H-t0-mKx" firstAttribute="centerX" secondItem="r1P-hM-t5e" secondAttribute="centerX" id="9V2-gh-Gj4"/>
+                            <constraint firstItem="N51-Q1-Aqr" firstAttribute="top" secondItem="r1P-hM-t5e" secondAttribute="top" id="A5G-gT-zFE"/>
+                            <constraint firstItem="TlH-3W-Y8Y" firstAttribute="top" secondItem="uh3-Tf-dmj" secondAttribute="bottom" constant="5" id="DHp-Jq-rhw"/>
+                            <constraint firstItem="yVe-ez-ptP" firstAttribute="top" secondItem="U4H-t0-mKx" secondAttribute="bottom" constant="10" id="DPb-sw-jYI"/>
+                            <constraint firstItem="yVe-ez-ptP" firstAttribute="leading" secondItem="6pH-cr-Cii" secondAttribute="leading" id="ISh-P7-ki8"/>
+                            <constraint firstItem="N51-Q1-Aqr" firstAttribute="trailing" secondItem="6pH-cr-Cii" secondAttribute="trailing" id="Ld0-gL-o6a"/>
+                            <constraint firstItem="6pH-cr-Cii" firstAttribute="bottom" secondItem="pcK-tl-DWs" secondAttribute="bottom" constant="120" id="WHP-vz-tZX"/>
+                            <constraint firstItem="pcK-tl-DWs" firstAttribute="height" secondItem="TlH-3W-Y8Y" secondAttribute="height" id="Wzi-hw-mgz"/>
+                            <constraint firstItem="pcK-tl-DWs" firstAttribute="centerX" secondItem="r1P-hM-t5e" secondAttribute="centerX" id="jtC-XB-zvl"/>
+                            <constraint firstAttribute="bottom" secondItem="N51-Q1-Aqr" secondAttribute="bottom" id="lmz-4r-SJD"/>
+                            <constraint firstItem="pcK-tl-DWs" firstAttribute="width" secondItem="TlH-3W-Y8Y" secondAttribute="width" id="otL-Zt-bUn"/>
+                            <constraint firstItem="U4H-t0-mKx" firstAttribute="leading" secondItem="6pH-cr-Cii" secondAttribute="leading" id="q8A-el-2Bm"/>
+                            <constraint firstItem="6pH-cr-Cii" firstAttribute="trailing" secondItem="U4H-t0-mKx" secondAttribute="trailing" id="rIL-nL-QOJ"/>
+                            <constraint firstItem="TlH-3W-Y8Y" firstAttribute="centerX" secondItem="r1P-hM-t5e" secondAttribute="centerX" id="uAK-31-2Ei"/>
+                            <constraint firstItem="yVe-ez-ptP" firstAttribute="centerY" secondItem="r1P-hM-t5e" secondAttribute="centerY" id="vKN-9m-QmI"/>
+                            <constraint firstItem="6pH-cr-Cii" firstAttribute="trailing" secondItem="yVe-ez-ptP" secondAttribute="trailing" id="xbh-iY-n4b"/>
+                            <constraint firstItem="uh3-Tf-dmj" firstAttribute="centerX" secondItem="r1P-hM-t5e" secondAttribute="centerX" id="xyA-05-TRt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6pH-cr-Cii"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login" id="v0o-6M-V0s"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="U4H-t0-mKx" id="k6j-EE-YrP"/>
+                        <outlet property="incorrectCredentialsLabel" destination="uh3-Tf-dmj" id="CEG-BO-8LX"/>
+                        <outlet property="loginButton" destination="TlH-3W-Y8Y" id="nnQ-2A-x6n"/>
+                        <outlet property="passwordTextField" destination="yVe-ez-ptP" id="V8v-kk-zCt"/>
+                        <outlet property="registerButton" destination="pcK-tl-DWs" id="waA-Sb-A6a"/>
+                        <segue destination="cmx-2k-z1i" kind="show" identifier="goToRegister" id="poh-jg-E2Y"/>
+                        <segue destination="nxF-Rp-9VJ" kind="show" identifier="goToHome" id="GwZ-Zp-D9s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1TX-ho-w9i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1659" y="-734"/>
+        </scene>
         <!--iBeer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -27,67 +298,126 @@
                                     <constraint firstAttribute="width" secondItem="JQ1-3P-Dti" secondAttribute="height" multiplier="1:1" id="NeZ-5K-0k5"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZW-il-QtM" customClass="FBSDKButton">
-                                <rect key="frame" x="102" y="635" width="210" height="30"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DM-lp-hzP" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="102" y="602" width="210" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="Kug-Ub-xru"/>
+                                    <constraint firstAttribute="width" constant="210" id="dVi-NH-47L"/>
+                                    <constraint firstAttribute="height" constant="40" id="iIu-Di-3H9"/>
                                 </constraints>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" red="0.82265228430000004" green="0.19133705340000001" blue="0.16051798640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Continue with Google"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="google"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftIconFontSize">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="fa"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="leftIconColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="facebookSignInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gj6-bD-ZpK"/>
+                                    <action selector="continueWithGooglePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rte-W4-g5Q"/>
                                 </connections>
-                            </button>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOB-lo-ego" customClass="GIDSignInButton">
-                                <rect key="frame" x="102" y="585" width="210" height="30"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtj-XL-r3s" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="102" y="722" width="210" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="hMN-Hu-Uxm"/>
+                                    <constraint firstAttribute="width" constant="210" id="YhL-dr-JGO"/>
+                                    <constraint firstAttribute="height" constant="40" id="fn8-41-1sr"/>
                                 </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJk-jW-Y1A">
-                                <rect key="frame" x="102" y="585" width="210" height="30"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" name="defaultAppColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showTouchFeedback" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="fa"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="envelope"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftIconFontSize">
+                                        <real key="value" value="19"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="leftIconColor">
+                                        <color key="value" name="defaultTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" name="defaultTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Continue with Email"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="googleSignInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wro-ac-VK7"/>
+                                    <action selector="continueWithEmailPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uxx-wr-X3p"/>
                                 </connections>
-                            </button>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kK5-dX-NLm" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="102" y="662" width="210" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showTouchFeedback" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Continue with Facebook"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconFontName" value="fa"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="leftIconString" value="facebook-square"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftIconFontSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continueWithFacebookPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AA2-GV-JLu"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="sJk-jW-Y1A" firstAttribute="top" secondItem="rOB-lo-ego" secondAttribute="top" id="0PZ-Z4-Lqq"/>
-                            <constraint firstItem="sJk-jW-Y1A" firstAttribute="bottom" secondItem="rOB-lo-ego" secondAttribute="bottom" id="1xl-FF-AcP"/>
+                            <constraint firstItem="mtj-XL-r3s" firstAttribute="height" secondItem="kK5-dX-NLm" secondAttribute="height" id="0lL-2z-8DU"/>
                             <constraint firstItem="JQ1-3P-Dti" firstAttribute="width" secondItem="qVy-Wp-bmO" secondAttribute="width" multiplier="0.4" id="3qB-WU-RiR"/>
-                            <constraint firstItem="sJk-jW-Y1A" firstAttribute="trailing" secondItem="rOB-lo-ego" secondAttribute="trailing" id="7Ed-Em-XHa"/>
-                            <constraint firstItem="xZW-il-QtM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BYq-Mo-aFW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xZW-il-QtM" secondAttribute="bottom" constant="197" id="BfE-rW-LO0"/>
+                            <constraint firstItem="2DM-lp-hzP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="57v-Cc-K0J"/>
+                            <constraint firstItem="mtj-XL-r3s" firstAttribute="top" secondItem="kK5-dX-NLm" secondAttribute="bottom" constant="20" id="5e6-yH-1DB"/>
                             <constraint firstItem="qVy-Wp-bmO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EoJ-Ir-eQG"/>
-                            <constraint firstItem="sJk-jW-Y1A" firstAttribute="leading" secondItem="rOB-lo-ego" secondAttribute="leading" id="Ffe-Ge-P1J"/>
                             <constraint firstAttribute="bottom" secondItem="qVy-Wp-bmO" secondAttribute="bottom" id="KQH-dl-SaC"/>
-                            <constraint firstItem="xZW-il-QtM" firstAttribute="height" secondItem="rOB-lo-ego" secondAttribute="height" id="Kqs-3u-d8D"/>
                             <constraint firstItem="qVy-Wp-bmO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QGg-Ja-GKc"/>
-                            <constraint firstItem="xZW-il-QtM" firstAttribute="top" secondItem="rOB-lo-ego" secondAttribute="bottom" constant="20" id="aG1-nb-UHI"/>
-                            <constraint firstItem="rOB-lo-ego" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ak7-6P-C8y"/>
+                            <constraint firstItem="mtj-XL-r3s" firstAttribute="width" secondItem="kK5-dX-NLm" secondAttribute="width" id="QUf-XL-LHK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mtj-XL-r3s" secondAttribute="bottom" constant="100" id="QoX-Db-oda"/>
+                            <constraint firstItem="kK5-dX-NLm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aSU-jF-IaW"/>
                             <constraint firstItem="JQ1-3P-Dti" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="bAL-mQ-EzW"/>
+                            <constraint firstItem="kK5-dX-NLm" firstAttribute="top" secondItem="2DM-lp-hzP" secondAttribute="bottom" constant="20" id="gNm-2q-gqc"/>
                             <constraint firstItem="JQ1-3P-Dti" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hOj-GW-N47"/>
+                            <constraint firstItem="mtj-XL-r3s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nXV-ua-PrR"/>
                             <constraint firstAttribute="trailing" secondItem="qVy-Wp-bmO" secondAttribute="trailing" id="rAl-L5-hqZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="iBeer" id="ZEf-Eq-PYz"/>
                     <connections>
-                        <outlet property="fb" destination="xZW-il-QtM" id="rlN-2P-wOM"/>
-                        <outlet property="googleSignInButton" destination="sJk-jW-Y1A" id="VBd-tb-wCj"/>
                         <outlet property="logoImageView" destination="JQ1-3P-Dti" id="LSM-4p-4cp"/>
                         <outlet property="logoImageYConstraint" destination="bAL-mQ-EzW" id="pUI-Mg-9ST"/>
-                        <outlet property="signInButton" destination="rOB-lo-ego" id="puc-Xz-xuo"/>
                         <segue destination="nxF-Rp-9VJ" kind="show" identifier="goToHome" animates="NO" id="Ckz-eV-tCo"/>
+                        <segue destination="DDr-o3-SJi" kind="show" identifier="goToLogin" id="3e6-K6-iuR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+            <point key="canvasLocation" x="906" y="139"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="nqE-xG-w8e">
@@ -1206,6 +1536,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YE2-bu-hGI"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9es-Wz-Zwb"/>
                     <connections>
                         <outlet property="collapsableFiltersView" destination="gHc-cb-ABn" id="EkV-di-ci0"/>
                         <outlet property="collapsableViewBottomConstraint" destination="cJk-9v-5rC" id="Aco-Hi-hrn"/>
@@ -1257,10 +1588,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uih-JM-Bvi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="139"/>
+            <point key="canvasLocation" x="26" y="139"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="unJ-bG-fDb"/>
         <segue reference="rZW-Sz-XZB"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1282,6 +1614,15 @@
         <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
         <image name="wand.and.stars.inverse" catalog="system" width="128" height="113"/>
         <image name="x.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="defaultAppColor">
+            <color red="0.99500000476837158" green="0.70099997520446777" blue="0.32600000500679016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="defaultRegisterButtonColor">
+            <color red="0.1216294411" green="0.0058639232599999999" blue="0.01042001926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="defaultRegisterButtonTextColor">
+            <color red="0.82741116749999999" green="0.63412123649999996" blue="0.3179751348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="defaultTextColor">
             <color red="0.12200000137090683" green="0.0060000000521540642" blue="0.0099999997764825821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

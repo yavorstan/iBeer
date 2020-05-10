@@ -13,6 +13,7 @@ import UserNotifications
 import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleMobileAds
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var isDarkTheme = UserDefaults.standard.isDarkTheme()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
@@ -65,6 +68,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let userDefaults = UserDefaults(suiteName: GroupIdentifier.identifier) {
                 userDefaults.set(try? PropertyListEncoder().encode([BeersListModel]()), forKey: "widget")
             }
+            
+            UserDefaults.standard.removePreviousLogin()
         }
         
         if UserDefaults.standard.hasTimerForAd() {

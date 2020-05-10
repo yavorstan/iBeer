@@ -22,6 +22,8 @@
 		B25928412440BD3B00621AC5 /* IntegratedBABackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25928402440BD3B00621AC5 /* IntegratedBABackground.swift */; };
 		B25928432440C4FE00621AC5 /* IntegratedBALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25928422440C4FE00621AC5 /* IntegratedBALabel.swift */; };
 		B25B6C0624482F110095E2CE /* BATimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B6C0524482F110095E2CE /* BATimerLabel.swift */; };
+		B25F01A8246443DE00DB85FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B25F01A7246443DE00DB85FA /* GoogleService-Info.plist */; };
+		B25F01AB24644AB200DB85FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25F01AA24644AB200DB85FA /* LoginViewController.swift */; };
 		B2639A7C245821ED00D13CCD /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2639A7B245821EC00D13CCD /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B26B3498241BC45500FEB0CC /* LocalPushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B3497241BC45500FEB0CC /* LocalPushNotificationsManager.swift */; };
 		B26B349D24224AA900FEB0CC /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B349C24224AA900FEB0CC /* PopupManager.swift */; };
@@ -87,6 +89,7 @@
 		B27FA14E2452D65300BAAB2B /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2085FC824508325008B1D3F /* BeerModel.swift */; };
 		B27FA14F2452D88500BAAB2B /* BeersListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F2A04241135F60060E45A /* BeersListModel.swift */; };
 		B27FA1502452D89700BAAB2B /* BABeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270F0832416462F006CF152 /* BABeerModel.swift */; };
+		B290F83524655BBB00C34007 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290F83424655BBB00C34007 /* RegisterViewController.swift */; };
 		B2A4E6852458B1C4004C6AC5 /* UIImage+ResizeAndColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4E6842458B1C4004C6AC5 /* UIImage+ResizeAndColor.swift */; };
 		B2AF0F76245482F500D004B2 /* FavouriteBeersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF0F75245482F500D004B2 /* FavouriteBeersManager.swift */; };
 		B2C84AEB2434ABFC00DA10FD /* CustomAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C84AEA2434ABFC00DA10FD /* CustomAccessoryView.xib */; };
@@ -151,6 +154,8 @@
 		B25928402440BD3B00621AC5 /* IntegratedBABackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegratedBABackground.swift; sourceTree = "<group>"; };
 		B25928422440C4FE00621AC5 /* IntegratedBALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegratedBALabel.swift; sourceTree = "<group>"; };
 		B25B6C0524482F110095E2CE /* BATimerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BATimerLabel.swift; sourceTree = "<group>"; };
+		B25F01A7246443DE00DB85FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B25F01AA24644AB200DB85FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B2639A7B245821EC00D13CCD /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		B26B3497241BC45500FEB0CC /* LocalPushNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushNotificationsManager.swift; sourceTree = "<group>"; };
 		B26B349C24224AA900FEB0CC /* PopupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupManager.swift; sourceTree = "<group>"; };
@@ -211,6 +216,7 @@
 		B27FA1492452C20F00BAAB2B /* TodayWidgetFavouriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayWidgetFavouriteCell.xib; sourceTree = "<group>"; };
 		B27FA1532453071300BAAB2B /* iBeer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iBeer.entitlements; sourceTree = "<group>"; };
 		B27FA1542453073B00BAAB2B /* todayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = todayWidget.entitlements; sourceTree = "<group>"; };
+		B290F83424655BBB00C34007 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B2A4E6842458B1C4004C6AC5 /* UIImage+ResizeAndColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ResizeAndColor.swift"; sourceTree = "<group>"; };
 		B2AF0F75245482F500D004B2 /* FavouriteBeersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteBeersManager.swift; sourceTree = "<group>"; };
 		B2C84AEA2434ABFC00DA10FD /* CustomAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAccessoryView.xib; sourceTree = "<group>"; };
@@ -312,6 +318,14 @@
 				B21AAACE244090D7006FC8BC /* DeveloperModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B25F01A924644A7900DB85FA /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B25F01AA24644AB200DB85FA /* LoginViewController.swift */,
+			);
+			path = LoginScreen;
 			sourceTree = "<group>";
 		};
 		B26B349E24234D3A00FEB0CC /* CarouselCell */ = {
@@ -430,6 +444,7 @@
 				B27F29D1240FEF9C0060E45A /* Assets.xcassets */,
 				B27F29D3240FEF9C0060E45A /* LaunchScreen.storyboard */,
 				B27F29D6240FEF9C0060E45A /* Info.plist */,
+				B25F01A7246443DE00DB85FA /* GoogleService-Info.plist */,
 				B2C84B15243769A200DA10FD /* Localizable.strings */,
 				B27FA1532453071300BAAB2B /* iBeer.entitlements */,
 			);
@@ -476,6 +491,8 @@
 			isa = PBXGroup;
 			children = (
 				B27F29E2240FF9E50060E45A /* WelcomeScreen */,
+				B25F01A924644A7900DB85FA /* LoginScreen */,
+				B290F83324655B2700C34007 /* RegisterScreen */,
 				B27F29F02410F3330060E45A /* HomeScreen */,
 				B26B34A32424BD4500FEB0CC /* FilterScreen */,
 				B270F0712412859A006CF152 /* BeerDetailsScreen */,
@@ -585,6 +602,14 @@
 				B27FA1492452C20F00BAAB2B /* TodayWidgetFavouriteCell.xib */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		B290F83324655B2700C34007 /* RegisterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B290F83424655BBB00C34007 /* RegisterViewController.swift */,
+			);
+			path = RegisterScreen;
 			sourceTree = "<group>";
 		};
 		B2F57EDC2450404000CE23FE /* todayWidget */ = {
@@ -702,6 +727,7 @@
 			files = (
 				B27F29D5240FEF9C0060E45A /* LaunchScreen.storyboard in Resources */,
 				B2C84B13243769A200DA10FD /* Localizable.strings in Resources */,
+				B25F01A8246443DE00DB85FA /* GoogleService-Info.plist in Resources */,
 				B26B34B82428A93800FEB0CC /* BAFromToFilterView.xib in Resources */,
 				B2C84AEB2434ABFC00DA10FD /* CustomAccessoryView.xib in Resources */,
 				B2F57EF024506F5C00CE23FE /* MainInterface.storyboard in Resources */,
@@ -824,6 +850,7 @@
 				B26B349D24224AA900FEB0CC /* PopupManager.swift in Sources */,
 				B270F0982418FC97006CF152 /* BADownloadImageForAvatar.swift in Sources */,
 				B221594F24458CD300A18B5D /* SessionManager.swift in Sources */,
+				B25F01AB24644AB200DB85FA /* LoginViewController.swift in Sources */,
 				B26B34A124234DA900FEB0CC /* CarouselCell.swift in Sources */,
 				B21AAAC9243F5AF4006FC8BC /* SwiftUIInfoView.swift in Sources */,
 				B2AF0F76245482F500D004B2 /* FavouriteBeersManager.swift in Sources */,
@@ -875,6 +902,7 @@
 				B270F08024163D3A006CF152 /* BeerListResponseManager.swift in Sources */,
 				B26B3498241BC45500FEB0CC /* LocalPushNotificationsManager.swift in Sources */,
 				B2046475242AA3C40096B345 /* MonthYearPickerView.swift in Sources */,
+				B290F83524655BBB00C34007 /* RegisterViewController.swift in Sources */,
 				B21AAACB243F6C9C006FC8BC /* SwiftUIBackgroundView.swift in Sources */,
 				B27F29F6241100F00060E45A /* BATabBarController.swift in Sources */,
 				B27F2A1A241251720060E45A /* BeersListCell.swift in Sources */,

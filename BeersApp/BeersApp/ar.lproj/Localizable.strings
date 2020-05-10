@@ -121,3 +121,27 @@
 "str_email_popup" = "سيؤدي هذا إلى فتح تطبيق البريد الإلكتروني الافتراضي. هل أنت واثق؟";
 
 "str_linkedin_popup" = "سيؤدي هذا إلى إعادة توجيهك إلى LinkedIn. هل أنت واثق؟";
+
+//MARK: Login and Register
+
+"str_email" = "البريد الإلكتروني";
+
+"str_password" = "كلمه السر";
+
+"str_incorrect_credentials" = "أوراق غير صحيحة!";
+
+"str_repeat_password" = "اعد كلمة السر";
+
+"str_error_creating_user" = "خطأ في إنشاء المستخدم!";
+
+"str_invalid_email" = "بريد إلكتروني خاطئ!";
+
+"str_invalid_password" = "رمز مرور خاطئ!";
+
+"str_password_info" = "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل وحرف واحد كبير وحرف صغير واحد ورقم واحد!";
+
+"str_passwords_dont_match" = "كلمة المرور غير مطابقة!"; 
+
+"str_login" = "تسجيل الدخول";
+
+"str_register" = "تسجيل";

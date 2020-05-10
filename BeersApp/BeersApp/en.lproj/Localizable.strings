@@ -121,3 +121,27 @@
 "str_email_popup" = "This will open the default email application. Are you sure?";
 
 "str_linkedin_popup" = "This will redirect you to LinkedIn. Are you sure?";
+
+//MARK: Login and Register
+
+"str_email" = "Email";
+
+"str_password" = "Password";
+
+"str_incorrect_credentials" = "Incorrect credentials!";
+
+"str_repeat_password" = "Repeat password";
+
+"str_error_creating_user" = "Error creating user!";
+
+"str_invalid_email" = "Invalid email!";
+
+"str_invalid_password" = "Invalid password!";
+
+"str_password_info" = "Password must have at least 8 characters, one upper case letter, one lower case letter and one number!";
+
+"str_passwords_dont_match" = "Passwords do not match!"; 
+
+"str_login" = "Login";
+
+"str_register" = "Register";
