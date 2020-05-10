@@ -18,7 +18,7 @@
   - Today Widget Extension presenting a random beer
   - Localisation in multiple languages
   - Multiple app settings, including:
-    - Switch between Light and Dark Mode
+    - Switch between Light and Dark Theme
     - Enable/disable local push notifications
     - Choose app language
     - Number off beers in the home page
