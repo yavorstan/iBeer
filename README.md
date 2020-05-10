@@ -23,6 +23,13 @@
     - Choose app language
     - Number off beers in the home page
 
+## Screenshots
+<p align="center">
+  <img src="Images/welcome.png" width="210">
+  <img src="Images/home.png" width="210">
+  <img src="Images/details.png" width="210">
+  <img src="Images/favourites.png" width="210">
+</p>
 
 ## API's
 ***iBeer*** uses a number of open-source API's in order to work properly:
