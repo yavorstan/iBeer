@@ -14,10 +14,10 @@ iBeer is a free, open-source iOS application with detailed information about dif
   - Today Widget Extension presenting a random beer
   - Localisation in multiple languages
   - Multiple app settings, including:
--- Switch between Light and Dark Mode
--- Enable/disable notifications
--- Choose app language
--- Number off beers in the home page
+    - Switch between Light and Dark Mode
+    - Enable/disable local push notifications
+    - Choose app language
+    - Number off beers in the home page
 
 
 ### API's
@@ -33,7 +33,7 @@ iBeer uses a number of open source API's in order to work properly:
 
 
 
-###### *This app also uses the 'Punk API' for it's data informatin which you can find here -> https://punkapi.com/documentation/v2*
+###### *This app also uses the 'Punk API' for it's data which you can find here -> https://punkapi.com/documentation/v2*
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
