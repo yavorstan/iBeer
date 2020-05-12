@@ -648,6 +648,7 @@
 				C97E6353CED66FE15783B2F5 /* [CP] Embed Pods Frameworks */,
 				37CC0540B1A551B081155E66 /* [CP] Copy Pods Resources */,
 				B2F57EE62450404000CE23FE /* Embed App Extensions */,
+				B2F19F3F24693C1400B2D11B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -818,6 +819,25 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B2F19F3F24693C1400B2D11B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		C97E6353CED66FE15783B2F5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1016,7 +1036,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1106,9 +1126,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BeersApp/iBeer.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 32LFP2ARQE;
 				INFOPLIST_FILE = BeersApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1118,7 +1138,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.imperiaonline.BeersApp;
 				PRODUCT_NAME = iBeer;
-				PROVISIONING_PROFILE_SPECIFIER = "Beers App Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "Beers App Distribution";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1133,9 +1153,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BeersApp/iBeer.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 32LFP2ARQE;
 				INFOPLIST_FILE = BeersApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1145,7 +1165,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.imperiaonline.BeersApp;
 				PRODUCT_NAME = iBeer;
-				PROVISIONING_PROFILE_SPECIFIER = "Beers App Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "Beers App Distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1156,9 +1176,9 @@
 			baseConfigurationReference = 0F6B1A4D3EDEE0C086D6C723 /* Pods-todayWidget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = todayWidget/todayWidget.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 32LFP2ARQE;
 				INFOPLIST_FILE = todayWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1168,7 +1188,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.imperiaonline.BeersApp.todayWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "BeersApp Today Widget Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "BeersApp Today Widget Distribution";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1180,9 +1200,9 @@
 			baseConfigurationReference = 01AB4457927A3FA3C9799869 /* Pods-todayWidget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = todayWidget/todayWidget.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 32LFP2ARQE;
 				INFOPLIST_FILE = todayWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1192,7 +1212,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.imperiaonline.BeersApp.todayWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "BeersApp Today Widget Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "BeersApp Today Widget Distribution";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

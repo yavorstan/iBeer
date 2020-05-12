@@ -22,7 +22,9 @@ target 'BeersApp' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'LGButton'
-  
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
+
 end
 
 target 'todayWidget' do

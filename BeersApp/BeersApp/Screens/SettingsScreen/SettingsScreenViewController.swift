@@ -346,7 +346,7 @@ class SettingsScreenViewController: BAViewController {
             
             AdvertsManager.shared.userAllowedAdverts = true
             UserDefaults.standard.saveIfAdvertsAreAllowed(true)
-            if !rewardedAd!.isReady {
+            if (rewardedAd?.isReady) != nil {
                 self.rewardedAd = AdvertsManager.shared.createAndLoadRewardedAd()
             }
         } else {

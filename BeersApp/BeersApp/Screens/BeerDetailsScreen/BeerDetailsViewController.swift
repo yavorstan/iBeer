@@ -107,6 +107,13 @@ class BeerDetailsViewController: BAViewController {
         self.checkIfFavourite()
         self.view.layoutIfNeeded()
     }
+    /* Works only on real device */
+    @objc private func shareToFB() {
+        let content = SharePhotoContent()
+        content.photos = [SharePhoto(image: self.image.imageView.image!, userGenerated: true)]
+        let dialog = ShareDialog.init(fromViewController: self, content: content, delegate: self)
+        dialog.show()
+    }
     
     //MARK: Util Methods
     private func checkIfFavourite() {
@@ -135,12 +142,6 @@ class BeerDetailsViewController: BAViewController {
         return attrString
     }
     
-    @objc private func shareToFB() {
-        let content = SharePhotoContent()
-        content.photos = [SharePhoto(image: self.image.imageView.image!, userGenerated: true)]
-        let dialog = ShareDialog.init(fromViewController: self, content: content, delegate: self)
-        dialog.show()
-    }
 }
 
 //MARK: - ResponseManagerDelegate
