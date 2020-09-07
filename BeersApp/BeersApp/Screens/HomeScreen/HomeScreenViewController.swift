@@ -12,6 +12,7 @@ import PKHUD
 
 class HomeScreenViewController: BAViewController{
     
+    //MARK: - IBOutlets
     @IBOutlet weak var homeButton: UITabBarItem!
     
     @IBOutlet weak var noBeersFoundLabel: BALabel!
@@ -19,6 +20,7 @@ class HomeScreenViewController: BAViewController{
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    //MARK: - Variables
     var delegate: ResponseManagerDelegate?
     var allBeersList = [BeersListModel]()
     var selectedBeerId = Int()
@@ -35,10 +37,12 @@ class HomeScreenViewController: BAViewController{
     //MARK: Lifecycle Methods
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         if let index = self.tableView.indexPathForSelectedRow{
             self.tableView.deselectRow(at: index, animated: true)
         }
         self.searchBar.endEditing(true)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -70,10 +74,12 @@ class HomeScreenViewController: BAViewController{
         noBeersFoundLabel.isHidden = true
         
         if currentNumberOfBeersPerPage != UserDefaults.standard.getBeersPerPage()! {
+            
             currentNumberOfBeersPerPage = UserDefaults.standard.getBeersPerPage()!
             self.currentPage = 1
             self.allBeersList.removeAll()
             RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.withPages)", delegate: delegate, responseManager: BeerListResponseManager())
+            
         }
         if allBeersList.count > 0 {
             let indexPath = IndexPath(row: 0, section: 0)
@@ -81,6 +87,7 @@ class HomeScreenViewController: BAViewController{
         }
         
         tableView.reloadData()
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,61 +102,79 @@ class HomeScreenViewController: BAViewController{
         
         currentNumberOfBeersPerPage = UserDefaults.standard.getBeersPerPage()!
         RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.withPages)", delegate: delegate, responseManager: BeerListResponseManager())
+        
     }
     
-    //MARK: - Button Actions
+    //MARK: - Buttons actions
     @objc func filterTapped () {
         performSegue(withIdentifier: SegueConstants.goToFilterScreen, sender: self)
     }
     
     @objc func randomTapped() {
+        
         self.isRandomButtonPressed = true
         performSegue(withIdentifier: SegueConstants.goToBeerDetails, sender: self)
         self.isRandomButtonPressed = false
+        
     }
     
     //MARK: Util Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == SegueConstants.goToBeerDetails  {
+            
             let vc = segue.destination as! BeerDetailsViewController
             var endpoint = String()
             if isRandomButtonPressed {
+                
                 if UserDefaults.standard.randomBeerIsFromFavourites() {
+                    
                     let favouritesArray = FavouriteBeersManager.shared.getFavouriteBeersArray()
                     self.selectedBeerId = (favouritesArray?.randomElement()!.id)!
                     vc.selectedBeerId = selectedBeerId
                     endpoint = "\(selectedBeerId)"
+                    
                 } else {
                     endpoint = "random"
                 }
                 vc.url = "\(URLConstants.getBeerById)\(endpoint)"
+                
             } else {
                 vc.selectedBeerId = selectedBeerId
                 vc.url = "\(URLConstants.getBeerById)\(selectedBeerId)"
             }
             
         }
+        
     }
     
     func fromWidget() {
+        
         let appdelgateObj = UIApplication.shared.delegate as! AppDelegate
         if let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "details") as? BeerDetailsViewController {
+            
             if let window = appdelgateObj.window , let rootViewController = window.rootViewController {
+                
                 destinationVC.selectedBeerId = 5
                 var currentController = rootViewController
                 while let presentedController = currentController.presentedViewController {
                     currentController = presentedController
                 }
                 currentController.present(destinationVC, animated: true, completion: nil)
+                
             }
+            
         }
+        
     }
 }
 
 
 //MARK: - ResponseManagerDelegate
 extension HomeScreenViewController: ResponseManagerDelegate {
+    
     func didGetResponse(_ responseManager: ResponseManagerDelegate, _ beerList: [BABeerModel]) {
+        
         DispatchQueue.main.async {
             if !self.isSearching {
                 if beerList.isEmpty {
@@ -169,10 +194,13 @@ extension HomeScreenViewController: ResponseManagerDelegate {
                 self.tableView.reloadData()
             }
         }
+        
     }
+    
     func didFailWithError(error: Error) {
         super.failedWithError(error: error)
     }
+    
 }
 
 //MARK: - TableViewDataSource
@@ -183,6 +211,7 @@ extension HomeScreenViewController: UITableViewDataSource {
     
     //Reloads table data when bottom is reached
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
         let bottomEdge = self.tableView.contentOffset.y + self.tableView.frame.size.height
         if bottomEdge >= self.tableView.contentSize.height {
             if !self.isSearching{
@@ -194,9 +223,11 @@ extension HomeScreenViewController: UITableViewDataSource {
                 return
             }
         }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: CellConstants.BeersListCell, for: indexPath) as! BeersListCell
         cell.populate(beer: allBeersList[indexPath.row])
         let beer = self.allBeersList[indexPath.row]
@@ -205,6 +236,7 @@ extension HomeScreenViewController: UITableViewDataSource {
             return beer.id
         }
         return cell
+        
     }
 }
 
@@ -219,9 +251,9 @@ extension HomeScreenViewController: UITableViewDelegate {
     
 }
 
-//MARK: - Search Bar
-
+//MARK: - Searchbar
 extension HomeScreenViewController: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty || searchText == "" {
             self.isSearching = false
@@ -239,6 +271,7 @@ extension HomeScreenViewController: UISearchBarDelegate {
             RequestManager.shared.fetch(url: "\(URLConstants.getBeersListPage)\(currentPage)\(URLConstants.withPages)", delegate: delegate, responseManager: BeerListResponseManager())
         }
     }
+    
     func clearButtonPressed() {
         if #available(iOS 13.0, *) {
             searchBar.searchTextField.text = ""
@@ -255,4 +288,5 @@ extension HomeScreenViewController: UISearchBarDelegate {
         noBeersFoundLabel.isHidden = true
         tableView.reloadData()
     }
+    
 }

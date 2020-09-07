@@ -17,12 +17,11 @@
 		B21AAACB243F6C9C006FC8BC /* SwiftUIBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21AAACA243F6C9C006FC8BC /* SwiftUIBackgroundView.swift */; };
 		B21AAACD243F6D45006FC8BC /* SwiftUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21AAACC243F6D45006FC8BC /* SwiftUILabel.swift */; };
 		B21AAACF244090D7006FC8BC /* DeveloperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21AAACE244090D7006FC8BC /* DeveloperModel.swift */; };
-		B221594F24458CD300A18B5D /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221594E24458CD300A18B5D /* SessionManager.swift */; };
+		B221594F24458CD300A18B5D /* UserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221594E24458CD300A18B5D /* UserSessionManager.swift */; };
 		B22159512446E99100A18B5D /* AdvertsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22159502446E99100A18B5D /* AdvertsManager.swift */; };
 		B25928412440BD3B00621AC5 /* IntegratedBABackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25928402440BD3B00621AC5 /* IntegratedBABackground.swift */; };
 		B25928432440C4FE00621AC5 /* IntegratedBALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25928422440C4FE00621AC5 /* IntegratedBALabel.swift */; };
 		B25B6C0624482F110095E2CE /* BATimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B6C0524482F110095E2CE /* BATimerLabel.swift */; };
-		B25F01A8246443DE00DB85FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B25F01A7246443DE00DB85FA /* GoogleService-Info.plist */; };
 		B25F01AB24644AB200DB85FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25F01AA24644AB200DB85FA /* LoginViewController.swift */; };
 		B2639A7C245821ED00D13CCD /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2639A7B245821EC00D13CCD /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B26B3498241BC45500FEB0CC /* LocalPushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B3497241BC45500FEB0CC /* LocalPushNotificationsManager.swift */; };
@@ -96,6 +95,7 @@
 		B2C84AED2434AC0B00DA10FD /* CustomAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C84AEC2434AC0B00DA10FD /* CustomAccessoryView.swift */; };
 		B2C84B10243760A700DA10FD /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C84B0F243760A700DA10FD /* BundleExtension.swift */; };
 		B2C84B13243769A200DA10FD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2C84B15243769A200DA10FD /* Localizable.strings */; };
+		B2DD68192494C7F200B605F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2DD68182494C7F200B605F8 /* GoogleService-Info.plist */; };
 		B2F57EDB2450404000CE23FE /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F57EDA2450404000CE23FE /* NotificationCenter.framework */; };
 		B2F57EDE2450404000CE23FE /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F57EDD2450404000CE23FE /* TodayViewController.swift */; };
 		B2F57EE12450404000CE23FE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F57EDF2450404000CE23FE /* MainInterface.storyboard */; };
@@ -149,12 +149,11 @@
 		B21AAACA243F6C9C006FC8BC /* SwiftUIBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBackgroundView.swift; sourceTree = "<group>"; };
 		B21AAACC243F6D45006FC8BC /* SwiftUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUILabel.swift; sourceTree = "<group>"; };
 		B21AAACE244090D7006FC8BC /* DeveloperModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperModel.swift; sourceTree = "<group>"; };
-		B221594E24458CD300A18B5D /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		B221594E24458CD300A18B5D /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
 		B22159502446E99100A18B5D /* AdvertsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertsManager.swift; sourceTree = "<group>"; };
 		B25928402440BD3B00621AC5 /* IntegratedBABackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegratedBABackground.swift; sourceTree = "<group>"; };
 		B25928422440C4FE00621AC5 /* IntegratedBALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegratedBALabel.swift; sourceTree = "<group>"; };
 		B25B6C0524482F110095E2CE /* BATimerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BATimerLabel.swift; sourceTree = "<group>"; };
-		B25F01A7246443DE00DB85FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B25F01AA24644AB200DB85FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B2639A7B245821EC00D13CCD /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		B26B3497241BC45500FEB0CC /* LocalPushNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushNotificationsManager.swift; sourceTree = "<group>"; };
@@ -230,6 +229,7 @@
 		B2C84B1724377CD900DA10FD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		B2C84B1824377CD900DA10FD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B2C84B1924377CD900DA10FD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B2DD68182494C7F200B605F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2F57ED92450404000CE23FE /* todayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = todayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F57EDA2450404000CE23FE /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		B2F57EDD2450404000CE23FE /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -294,8 +294,8 @@
 		B21AAAC4243F529A006FC8BC /* DeveloperPageSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				B21AAAC5243F52CD006FC8BC /* DeveloperPage.swift */,
 				B21AAAD0244090E1006FC8BC /* Model */,
+				B21AAAC5243F52CD006FC8BC /* DeveloperPage.swift */,
 			);
 			path = DeveloperPageSwiftUI;
 			sourceTree = "<group>";
@@ -387,9 +387,9 @@
 		B270F0712412859A006CF152 /* BeerDetailsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				B270F07824163274006CF152 /* Model */,
 				B270F072241285BF006CF152 /* BeerDetailsViewController.swift */,
 				B270F0852416716E006CF152 /* PopOverViewController.swift */,
-				B270F07824163274006CF152 /* Model */,
 			);
 			path = BeerDetailsScreen;
 			sourceTree = "<group>";
@@ -417,7 +417,6 @@
 			children = (
 				B27F29C8240FEF990060E45A /* AppDelegate.swift */,
 				B27F29CA240FEF990060E45A /* SceneDelegate.swift */,
-				B27F29DC240FF2460060E45A /* Utils */,
 				B27F29C7240FEF990060E45A /* BeersApp */,
 				B2F57EDC2450404000CE23FE /* todayWidget */,
 				B27F29C6240FEF990060E45A /* Products */,
@@ -438,38 +437,29 @@
 		B27F29C7240FEF990060E45A /* BeersApp */ = {
 			isa = PBXGroup;
 			children = (
-				B27F29E1240FF9630060E45A /* View */,
 				B270F0902417B95B006CF152 /* Model */,
+				B27F29E1240FF9630060E45A /* View */,
 				B27F29E0240FF9520060E45A /* Screens */,
-				B27F29D1240FEF9C0060E45A /* Assets.xcassets */,
-				B27F29D3240FEF9C0060E45A /* LaunchScreen.storyboard */,
-				B27F29D6240FEF9C0060E45A /* Info.plist */,
-				B25F01A7246443DE00DB85FA /* GoogleService-Info.plist */,
-				B2C84B15243769A200DA10FD /* Localizable.strings */,
+				B27F29DC240FF2460060E45A /* HelperClasses */,
+				D9723E8124F6F1C4001ED940 /* Managers */,
+				D9723E8024F6F199001ED940 /* Utilities */,
 				B27FA1532453071300BAAB2B /* iBeer.entitlements */,
+				B27F29D6240FEF9C0060E45A /* Info.plist */,
 			);
 			path = BeersApp;
 			sourceTree = "<group>";
 		};
-		B27F29DC240FF2460060E45A /* Utils */ = {
+		B27F29DC240FF2460060E45A /* HelperClasses */ = {
 			isa = PBXGroup;
 			children = (
 				B27F29E7240FFC770060E45A /* Constants.swift */,
-				B27F29FD241130F90060E45A /* RequestManager.swift */,
-				B27F29FF241134230060E45A /* ResponseManager.swift */,
 				B270F0832416462F006CF152 /* BABeerModel.swift */,
-				B26B3497241BC45500FEB0CC /* LocalPushNotificationsManager.swift */,
-				B26B349C24224AA900FEB0CC /* PopupManager.swift */,
-				B27908F32444E25B001D6E8D /* AuthenticationManager.swift */,
-				B221594E24458CD300A18B5D /* SessionManager.swift */,
-				B22159502446E99100A18B5D /* AdvertsManager.swift */,
-				B2AF0F75245482F500D004B2 /* FavouriteBeersManager.swift */,
 				B27F2A0B241150C50060E45A /* Custom Views */,
 				B21AAAC7243F5ACD006FC8BC /* Custom SwiftUI Views */,
 				B27F29EB241000D50060E45A /* Custom Extensions */,
 				B27F29DD240FF2530060E45A /* Custom Controlls */,
 			);
-			path = Utils;
+			path = HelperClasses;
 			sourceTree = "<group>";
 		};
 		B27F29DD240FF2530060E45A /* Custom Controlls */ = {
@@ -535,9 +525,9 @@
 		B27F29F02410F3330060E45A /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				B27F29F32410F39C0060E45A /* HomeScreenViewController.swift */,
 				B27F2A01241135BE0060E45A /* Model */,
 				B27F2A06241150210060E45A /* BeersListCell */,
+				B27F29F32410F39C0060E45A /* HomeScreenViewController.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -553,8 +543,8 @@
 		B27F29F22410F3500060E45A /* FavouritesScreen */ = {
 			isa = PBXGroup;
 			children = (
-				B27F29F9241102D50060E45A /* FavouritesScreenViewController.swift */,
 				B26B349E24234D3A00FEB0CC /* CarouselCell */,
+				B27F29F9241102D50060E45A /* FavouritesScreenViewController.swift */,
 			);
 			path = FavouritesScreen;
 			sourceTree = "<group>";
@@ -581,15 +571,15 @@
 		B27F2A0B241150C50060E45A /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				B27F2A1C241252F30060E45A /* BADownloadImageView.xib */,
 				B27F2A1E241253600060E45A /* BADownloadImageView.swift */,
+				B27F2A1C241252F30060E45A /* BADownloadImageView.xib */,
 				B27F2A20241254FB0060E45A /* BADownloadImageViewWithBorder.swift */,
 				B270F0972418FC97006CF152 /* BADownloadImageForAvatar.swift */,
 				B27F2A222412561E0060E45A /* BALineDivider.swift */,
-				B26B34AC242807BC00FEB0CC /* BAFiltersView.xib */,
 				B26B34AA2428079600FEB0CC /* BAFiltersView.swift */,
-				B2C84AEA2434ABFC00DA10FD /* CustomAccessoryView.xib */,
+				B26B34AC242807BC00FEB0CC /* BAFiltersView.xib */,
 				B2C84AEC2434AC0B00DA10FD /* CustomAccessoryView.swift */,
+				B2C84AEA2434ABFC00DA10FD /* CustomAccessoryView.xib */,
 				B26B34B02428A70500FEB0CC /* Custom Filter Views */,
 			);
 			path = "Custom Views";
@@ -632,6 +622,32 @@
 				B2F57EFB2450759600CE23FE /* ConstantsTodayWidget.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		D9723E8024F6F199001ED940 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B27F29D1240FEF9C0060E45A /* Assets.xcassets */,
+				B27F29D3240FEF9C0060E45A /* LaunchScreen.storyboard */,
+				B2DD68182494C7F200B605F8 /* GoogleService-Info.plist */,
+				B2C84B15243769A200DA10FD /* Localizable.strings */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D9723E8124F6F1C4001ED940 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B22159502446E99100A18B5D /* AdvertsManager.swift */,
+				B27908F32444E25B001D6E8D /* AuthenticationManager.swift */,
+				B2AF0F75245482F500D004B2 /* FavouriteBeersManager.swift */,
+				B26B3497241BC45500FEB0CC /* LocalPushNotificationsManager.swift */,
+				B26B349C24224AA900FEB0CC /* PopupManager.swift */,
+				B27F29FD241130F90060E45A /* RequestManager.swift */,
+				B27F29FF241134230060E45A /* ResponseManager.swift */,
+				B221594E24458CD300A18B5D /* UserSessionManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -728,7 +744,7 @@
 			files = (
 				B27F29D5240FEF9C0060E45A /* LaunchScreen.storyboard in Resources */,
 				B2C84B13243769A200DA10FD /* Localizable.strings in Resources */,
-				B25F01A8246443DE00DB85FA /* GoogleService-Info.plist in Resources */,
+				B2DD68192494C7F200B605F8 /* GoogleService-Info.plist in Resources */,
 				B26B34B82428A93800FEB0CC /* BAFromToFilterView.xib in Resources */,
 				B2C84AEB2434ABFC00DA10FD /* CustomAccessoryView.xib in Resources */,
 				B2F57EF024506F5C00CE23FE /* MainInterface.storyboard in Resources */,
@@ -869,7 +885,7 @@
 				B26B34BC2428C06E00FEB0CC /* BADateFilterView.swift in Sources */,
 				B26B349D24224AA900FEB0CC /* PopupManager.swift in Sources */,
 				B270F0982418FC97006CF152 /* BADownloadImageForAvatar.swift in Sources */,
-				B221594F24458CD300A18B5D /* SessionManager.swift in Sources */,
+				B221594F24458CD300A18B5D /* UserSessionManager.swift in Sources */,
 				B25F01AB24644AB200DB85FA /* LoginViewController.swift in Sources */,
 				B26B34A124234DA900FEB0CC /* CarouselCell.swift in Sources */,
 				B21AAAC9243F5AF4006FC8BC /* SwiftUIInfoView.swift in Sources */,
@@ -1126,11 +1142,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BeersApp/iBeer.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 32LFP2ARQE;
 				INFOPLIST_FILE = BeersApp/Info.plist;
+				"INFOPLIST_FILE[sdk=*]" = BeersApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1138,7 +1155,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.imperiaonline.BeersApp;
 				PRODUCT_NAME = iBeer;
-				PROVISIONING_PROFILE_SPECIFIER = "Beers App Distribution";
+				PROVISIONING_PROFILE_SPECIFIER = "Beers App Dev";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1153,11 +1170,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BeersApp/iBeer.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 32LFP2ARQE;
 				INFOPLIST_FILE = BeersApp/Info.plist;
+				"INFOPLIST_FILE[sdk=*]" = BeersApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1165,7 +1183,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.imperiaonline.BeersApp;
 				PRODUCT_NAME = iBeer;
-				PROVISIONING_PROFILE_SPECIFIER = "Beers App Distribution";
+				PROVISIONING_PROFILE_SPECIFIER = "Beers App Dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1176,7 +1194,7 @@
 			baseConfigurationReference = 0F6B1A4D3EDEE0C086D6C723 /* Pods-todayWidget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = todayWidget/todayWidget.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 32LFP2ARQE;
@@ -1188,7 +1206,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.imperiaonline.BeersApp.todayWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "BeersApp Today Widget Distribution";
+				PROVISIONING_PROFILE_SPECIFIER = "BeersApp Today Widget Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1200,7 +1218,7 @@
 			baseConfigurationReference = 01AB4457927A3FA3C9799869 /* Pods-todayWidget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = todayWidget/todayWidget.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 32LFP2ARQE;
@@ -1212,7 +1230,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.imperiaonline.BeersApp.todayWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "BeersApp Today Widget Distribution";
+				PROVISIONING_PROFILE_SPECIFIER = "BeersApp Today Widget Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -8,13 +8,14 @@
 
 import Foundation
 
-
 class BeerListResponseManager: ResponseManager {
     
     override func parseJSON(categoryData: Data, delegate: ResponseManagerDelegate?) -> [BABeerModel]?{
+        
         self.delegate = delegate
         let decoder = JSONDecoder()
-        do{
+        do {
+            
             let decodedData = try decoder.decode([BeerListData].self, from: categoryData)
             var beerListModel = [BeersListModel]()
             
@@ -23,9 +24,12 @@ class BeerListResponseManager: ResponseManager {
             }
             
             return beerListModel
+            
         } catch {
             self.delegate?.didFailWithError(error: error)
             return nil
         }
+        
     }
+    
 }

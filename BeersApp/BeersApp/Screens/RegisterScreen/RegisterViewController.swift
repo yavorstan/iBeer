@@ -12,16 +12,18 @@ import LGButton
 
 class RegisterViewController: UIViewController {
     
+    //MARK: - IBOutlets
     @IBOutlet weak var emailTextField: BATextFilterView!
     @IBOutlet weak var passwordTextField: BATextFilterView!
     @IBOutlet weak var repeatPasswordTextfield: BATextFilterView!
     
     @IBOutlet weak var wrongInputLabel: UILabel!
     
+    @IBOutlet weak var registerButton: LGButton!
+    
+    //MARK: - Variables
     var email = String()
     var password = String()
-    
-    @IBOutlet weak var registerButton: LGButton!
     
     //MARK: Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +58,7 @@ class RegisterViewController: UIViewController {
                     self.wrongInputLabel.text = ""
                     
                     let user = User(idToken: nil, firstName: nil, lastName: nil, fullName: nil, email: self.email, profilePicture: nil)
-                    SessionManager.shared.setCurrentSession(user: user, auth: .email)
+                    UserSessionManager.shared.setCurrentSession(user: user, auth: .email)
                     
                     UserDefaults.standard.savePreviousLogin()
                     UserDefaults.standard.saveUserEmail(email: self.email)
@@ -94,8 +96,7 @@ class RegisterViewController: UIViewController {
             return true
         } else {
             self.wrongInputLabel.text = NSLocalizedString("str_invalid_password", comment: "")
-            let popupManager = PopupManager()
-            popupManager.showInfoPopup(title: NSLocalizedString("str_warning", comment: ""), message: NSLocalizedString("str_password_info", comment: ""))
+            PopupManager.shared.showInfoPopup(title: NSLocalizedString("str_warning", comment: ""), message: NSLocalizedString("str_password_info", comment: ""))
             passwordTextField.textField.makeBorderRedColor()
             return false
         }
@@ -123,4 +124,5 @@ class RegisterViewController: UIViewController {
             AuthenticationManager.shared.prepareToGoToHomeScreen(segue: segue)
         }
     }
+    
 }

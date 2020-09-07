@@ -11,9 +11,7 @@ import SCLAlertView
 
 @available(iOS 13.0.0, *)
 struct DeveloperPage: View {
-    
-    let popupManager = PopupManager()
-    
+        
     var body: some View {
         ZStack{
             SwiftUIBackgroundView()
@@ -43,10 +41,15 @@ struct DeveloperPage: View {
                     SwiftUIInfoView(text: DeveloperModel.phoneNumber, imageName: "phone.fill")
                         .overlay(
                             Button(action: {
-                                self.popupManager.showConfirmPopup(title: NSLocalizedString("str_warning", comment: ""), message: NSLocalizedString("str_phone_popup", comment: ""))
-                                self.popupManager.yesTapped = { () in
-                                    self.openURL(to: "TEL://\(DeveloperModel.phoneNumber)")
-                                }
+                                    
+                                    let title = NSLocalizedString("str_warning", comment: "")
+                                    let message = NSLocalizedString("str_phone_popup", comment: "")
+                                    PopupManager.shared.showConfirmPopup(title: title,
+                                                                         message: message,
+                                                                         confirmationHandler: { () in
+                                        self.openURL(to: "TEL://\(DeveloperModel.phoneNumber)")
+                                    })
+                                
                             }) {
                                 Text("")
                                     .frame(width: 350, height: 30, alignment: .center)
@@ -55,10 +58,15 @@ struct DeveloperPage: View {
                     SwiftUIInfoView(text: DeveloperModel.email, imageName: "envelope.fill")
                         .overlay(
                             Button(action: {
-                                self.popupManager.showConfirmPopup(title: NSLocalizedString("str_warning", comment: ""), message: NSLocalizedString("str_email_popup", comment: ""))
-                                self.popupManager.yesTapped = { () in
+                                
+                                let title = NSLocalizedString("str_warning", comment: "")
+                                let message = NSLocalizedString("str_email_popup", comment: "")
+                                PopupManager.shared.showConfirmPopup(title: title,
+                                                                     message: message,
+                                                                     confirmationHandler: { () in
                                     self.openURL(to: "mailto:\(DeveloperModel.email)")
-                                }
+                                })
+                                
                             }) {
                                 Text("")
                                     .frame(width: 350, height: 30, alignment: .center)
@@ -68,10 +76,15 @@ struct DeveloperPage: View {
                     SwiftUIInfoView(text: DeveloperModel.linkedIn, imageName: "globe")
                         .overlay(
                             Button(action: {
-                                self.popupManager.showConfirmPopup(title: NSLocalizedString("str_warning", comment: ""), message: NSLocalizedString("str_linkedin_popup", comment: ""))
-                                self.popupManager.yesTapped = { () in
+                                
+                                let title = NSLocalizedString("str_warning", comment: "")
+                                let message = NSLocalizedString("str_linkedin_popup", comment: "")
+                                PopupManager.shared.showConfirmPopup(title: title,
+                                                                     message: message,
+                                                                     confirmationHandler: { () in
                                     self.openURL(to: "https://\(DeveloperModel.linkedIn)")
-                                }
+                                })
+                                
                             }) {
                                 Text("")
                                     .frame(width: 350, height: 30, alignment: .center)

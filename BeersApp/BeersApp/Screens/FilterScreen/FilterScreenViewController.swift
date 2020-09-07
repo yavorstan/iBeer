@@ -11,6 +11,10 @@ import PKHUD
 
 class FilterScreenViewController: BAViewController {
     
+    //MARK: - Constants
+    let screenBounds = UIScreen.main.bounds
+    
+    //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var noBeersFoundLabel: BALabel!
@@ -23,6 +27,7 @@ class FilterScreenViewController: BAViewController {
     
     @IBOutlet weak var filtersView: BAFiltersView!
     
+    //MARK: - Varables
     var filtersURL = ""
     
     var delegate: ResponseManagerDelegate?
@@ -33,14 +38,14 @@ class FilterScreenViewController: BAViewController {
     
     var isCollapsed = Bool()
     
-    let screenBounds = UIScreen.main.bounds
-    
     //MARK: Lifecycle Methods
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         if let index = self.tableView.indexPathForSelectedRow{
             self.tableView.deselectRow(at: index, animated: true)
         }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -96,17 +101,15 @@ class FilterScreenViewController: BAViewController {
         self.manageFilterView()
     }
     
-    @objc func clearTapped() {
-        filtersView.clearAllFilters()
-    }
-    
     //MARK: Util Methods
     private func manageFilterView() {
+        
         if isCollapsed {
             self.setFiltersViewState(collapsed: false)
         } else {
             self.setFiltersViewState(collapsed: true)
         }
+        
     }
     
     private func setFiltersViewState(collapsed: Bool) {
@@ -131,6 +134,11 @@ class FilterScreenViewController: BAViewController {
             }
         }, completion: nil)
     }
+    
+    @objc private func clearTapped() {
+        filtersView.clearAllFilters()
+    }
+    
 }
 
 //MARK: - ResponseManagerDelegate

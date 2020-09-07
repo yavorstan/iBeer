@@ -16,6 +16,7 @@ import LGButton
 
 class WelcomeViewController: BAViewController {
     
+    //MARK: - IBOutlets
     @IBOutlet weak var logoImageView: BALogo!
     @IBOutlet weak var logoImageYConstraint: NSLayoutConstraint!
     
@@ -59,7 +60,7 @@ class WelcomeViewController: BAViewController {
             let email = UserDefaults.standard.getEmailForLogin()
             let user = User(idToken: nil, firstName: nil, lastName: nil, fullName: nil, email: email, profilePicture: nil)
             
-            SessionManager.shared.setCurrentSession(user: user, auth: .email)
+            UserSessionManager.shared.setCurrentSession(user: user, auth: .email)
             self.performSegue(withIdentifier: SegueConstants.goToHome, sender: self)
         }
     }
@@ -81,4 +82,5 @@ class WelcomeViewController: BAViewController {
             AuthenticationManager.shared.prepareToGoToHomeScreen(segue: segue)
         }
     }
+    
 }

@@ -72,6 +72,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             window?.overrideUserInterfaceStyle = .light
         }
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
     
     func sceneWillResignActive(_ scene: UIScene) {

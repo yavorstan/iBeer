@@ -18,4 +18,5 @@ struct BeersListModel: BABeerModel, Equatable, Codable {
     static func ==(lhs: BeersListModel, rhs: BeersListModel) -> Bool {
         return lhs.id == rhs.id
     }
+    
 }

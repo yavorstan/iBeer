@@ -17,6 +17,7 @@ import GoogleMobileAds
 
 class SettingsScreenViewController: BAViewController {
     
+    //MARK: - IBOutlets
     @IBOutlet weak var settingsButton: UITabBarItem!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -58,13 +59,7 @@ class SettingsScreenViewController: BAViewController {
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userFullName: BALabel!
     
-    var langaugeChanged = false
-    
     @IBOutlet weak var timer: BATimerLabel!
-    
-    var rewardedAd: GADRewardedAd?
-    
-    var userDidWatchAd = false
     
     @IBOutlet weak var scrollViewHeightConstraint: NSLayoutConstraint!
     
@@ -73,6 +68,11 @@ class SettingsScreenViewController: BAViewController {
     
     @IBOutlet weak var advertsSettingsView: UIView!
     @IBOutlet weak var advertsSettingsViewTopConstraint: NSLayoutConstraint!
+    
+    //MARK: - Variables
+    var langaugeChanged = false
+    var rewardedAd: GADRewardedAd?
+    var userDidWatchAd = false
     
     //MARK: Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
@@ -121,17 +121,21 @@ class SettingsScreenViewController: BAViewController {
         allowAdvertsLabel.text = NSLocalizedString("str_allow_ads", comment: "")
         
         if AdvertsManager.shared.userAllowedAdverts {
+            
             allowAdvertsSwitch.setOn(true, animated: false)
             watchAdvertViewHeightConstraint.constant = SettingsScrollViewConstants.watchAdvertViewHeight
             watchAdvertView.isHidden = false
             advertsSettingsViewTopConstraint.constant = SettingsScrollViewConstants.allowSettingsViewTopConstraint
             self.scrollViewHeightConstraint.constant = SettingsScrollViewConstants.adSettingsHeight
+            
         } else {
+            
             allowAdvertsSwitch.setOn(false, animated: false)
             watchAdvertViewHeightConstraint.constant = 0
             watchAdvertView.isHidden = true
             advertsSettingsViewTopConstraint.constant = 0
             self.scrollViewHeightConstraint.constant = SettingsScrollViewConstants.onlyWatchAdButtonHeight
+            
         }
         
     }
@@ -139,6 +143,7 @@ class SettingsScreenViewController: BAViewController {
         super.viewDidLoad()
         
         if #available(iOS 13.0, *) {
+            
             darkModeIcon.isHidden = false
             darkModeLabel.isHidden = false
             darkModeSwitch.isHidden = false
@@ -150,13 +155,16 @@ class SettingsScreenViewController: BAViewController {
             darkModeSwitch.backgroundColor = .lightGray
             darkModeSwitch.layer.cornerRadius = darkModeSwitch.frame.height / 2
             darkModeIcon.tintColor = UIColor.DefaultTextColor.color
+            
         } else {
+            
             darkModeIcon.isHidden = true
             darkModeLabel.isHidden = true
             darkModeSwitch.isHidden = true
             darkModeIconConstraint.constant = -23
             darkModeLabelConstraint.constant = -20
             darkModeSwitchConstraint.constant = -30
+            
         }
         
         notificationsSwitch.onTintColor = UIColor.DefaultTextColor.color
@@ -167,6 +175,7 @@ class SettingsScreenViewController: BAViewController {
         notificationsIcon.tintColor = UIColor.DefaultTextColor.color
         
         if #available(iOS 13.0, *) {
+            
             favouritesStyleSwitch.selectedSegmentTintColor = UIColor.DefaultAppColor.color
             favouritesStyleSwitch.backgroundColor = .systemGray3
             randomBeerSwitch.selectedSegmentTintColor = UIColor.DefaultAppColor.color
@@ -175,6 +184,7 @@ class SettingsScreenViewController: BAViewController {
             beersPerPageSwitch.backgroundColor = .systemGray3
             languageSwitch.selectedSegmentTintColor = UIColor.DefaultAppColor.color
             languageSwitch.backgroundColor = .systemGray3
+            
         } else {
             
             favouritesStyleSwitch.tintColor = UIColor.DefaultAppColor.color
@@ -185,19 +195,24 @@ class SettingsScreenViewController: BAViewController {
             beersPerPageSwitch.backgroundColor = .gray
             languageSwitch.tintColor = UIColor.DefaultAppColor.color
             languageSwitch.backgroundColor = .gray
+            
         }
         favouritesStyleIcon.tintColor = UIColor.DefaultTextColor.color
         
         if #available(iOS 13.0, *) {
+            
             developerPageIcon.isHidden = false
             developerPageLabel.isHidden = false
             aboutUsButton.isHidden = false
             developerPageConstraint.constant = 15
+            
         } else {
+            
             developerPageIcon.isHidden = true
             developerPageLabel.isHidden = true
             aboutUsButton.isHidden = true
             developerPageConstraint.constant = -83
+            
         }
         
         allowAdvertsSwitch.onTintColor = UIColor.DefaultTextColor.color
@@ -205,9 +220,9 @@ class SettingsScreenViewController: BAViewController {
         allowAdvertsSwitch.backgroundColor = .lightGray
         allowAdvertsSwitch.layer.cornerRadius = darkModeSwitch.frame.height / 2
         
-        userAvatar.populateImage(withURL: SessionManager.shared.user?.profilePicture)
-        userEmail.text = SessionManager.shared.user?.email
-        userFullName.text = SessionManager.shared.user?.fullName
+        userAvatar.populateImage(withURL: UserSessionManager.shared.user?.profilePicture)
+        userEmail.text = UserSessionManager.shared.user?.email
+        userFullName.text = UserSessionManager.shared.user?.fullName
         
         if AdvertsManager.shared.appHasAdverts {
             self.watchAdvertView.isHidden = false
@@ -226,7 +241,7 @@ class SettingsScreenViewController: BAViewController {
         
         if UserDefaults.standard.hasTimerForAd() {
             
-            let timeOfRewardedAd = Date().timeIntervalSince(SessionManager.shared.timeOfRewardedAdWatch!)
+            let timeOfRewardedAd = Date().timeIntervalSince(UserSessionManager.shared.timeOfRewardedAdWatch!)
             if timeOfRewardedAd < AdvertsConstants.timeIntervalForRewardedAd {
                 self.watchAdvertButton.isHidden = true
                 
@@ -247,7 +262,7 @@ class SettingsScreenViewController: BAViewController {
     //MARK: Buttons Actions
     @available(iOS 13.0, *)
     @IBAction func logoutButtonPressed(_ sender: AnyObject) {
-        AuthenticationManager.shared.logout(authenticationType: SessionManager.shared.authType!)
+        AuthenticationManager.shared.logout(authenticationType: UserSessionManager.shared.authType!)
         AuthenticationManager.shared.successfulLogout = { () -> Void in
             weak var weakSelf = self
             weakSelf?.navigationController?.popToRootViewController(animated: true)
@@ -256,10 +271,10 @@ class SettingsScreenViewController: BAViewController {
     @IBAction func themeSwitchActivated(_ sender: UISwitch) {
         if #available(iOS 13.0, *){
             if sender.isOn {
-                UserDefaults.standard.saveThemeModeToPhoneMemory(isDark: true)
+                UserDefaults.standard.saveThemeToPhoneMemory(isDark: true)
                 UIApplication.shared.windows.first!.overrideUserInterfaceStyle = .dark
             } else {
-                UserDefaults.standard.saveThemeModeToPhoneMemory(isDark: false)
+                UserDefaults.standard.saveThemeToPhoneMemory(isDark: false)
                 UIApplication.shared.windows.first!.overrideUserInterfaceStyle = .light
             }
         }
@@ -362,7 +377,6 @@ class SettingsScreenViewController: BAViewController {
         }
     }
     
-    
     //MARK: Util Methods
     private func updateAppLanguageTo(language: String) {
         UserDefaults.standard.set(["\(language)-BG"], forKey: "AppleLanguages")
@@ -370,12 +384,12 @@ class SettingsScreenViewController: BAViewController {
         Bundle.setLanguage(language)
     }
     
-    
     //MARK: Adverts Methods
     private func setupAdverts() {
         rewardedAd = GADRewardedAd(adUnitID: AdvertsConstants.rewaredAdUnitID)
         AdvertsManager.shared.setupAdverts(rewardedAd!)
     }
+    
 }
 
 //MARK: - RewardedAdDelegate
@@ -389,6 +403,7 @@ extension SettingsScreenViewController: GADRewardedAdDelegate {
     }
     
     func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
+        
         self.rewardedAd = AdvertsManager.shared.createAndLoadRewardedAd()
         self.watchAdvertButton.isHidden = true
         
@@ -404,12 +419,15 @@ extension SettingsScreenViewController: GADRewardedAdDelegate {
             self.watchAdvertButton.isHidden = false
             UserDefaults.standard.saveIfHasTimerForAd(false)
         })
+        
     }
     
     func rewardedAd(_ rewardedAd: GADRewardedAd, didFailToPresentWithError error: Error) {
+        
         HUD.flash(.label("Couldn't display advert!"), delay: 0.6)
         watchAdvertButton.isHidden = false
         timer.invalidate()
+        
     }
     
 }

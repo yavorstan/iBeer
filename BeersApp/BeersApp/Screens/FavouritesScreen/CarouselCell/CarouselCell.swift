@@ -10,8 +10,7 @@ import UIKit
 
 class CarouselCell: UICollectionViewCell {
 
-    var imageTapped: ((CarouselCell) -> (Int))?
-    
+    //MARK: - IBOutlets
     @IBOutlet weak var favouriteIndicator: UIImageView!
     @IBOutlet weak var favouriteButton: UIButton!
     
@@ -20,6 +19,10 @@ class CarouselCell: UICollectionViewCell {
     @IBOutlet weak var beerImage: BADownloadImageView!
     @IBOutlet weak var beerName: BALabel!
     @IBOutlet weak var beerTagline: UILabel!
+    
+    //MARK: - Variables
+    var imageTapped: ((CarouselCell) -> (Int))?
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

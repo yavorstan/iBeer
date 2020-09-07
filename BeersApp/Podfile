@@ -24,6 +24,7 @@ target 'BeersApp' do
   pod 'LGButton'
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
 
 end
 

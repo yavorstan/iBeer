@@ -12,15 +12,10 @@ import FBSDKShareKit
 
 class BeerDetailsViewController: BAViewController {
     
+    //MARK: - IBOutlets
     @IBOutlet var infoButtons: [UIButton]!
-    
-    var delegate: ResponseManagerDelegate?
-    
+        
     @IBOutlet weak var backgroundView: BABackground!
-    
-    var addToFavouritesButton: UIBarButtonItem?
-    
-    var fbShareButton: UIBarButtonItem?
     
     @IBOutlet weak var image: BADownloadImageViewWithBorder!
     
@@ -43,9 +38,15 @@ class BeerDetailsViewController: BAViewController {
     
     @IBOutlet weak var contributedBy: UILabel!
     
+    //MARK: - Variables
+    var delegate: ResponseManagerDelegate?
+
     var selectedBeerId = Int()
     var beer: BeerDetailsModel?
     var url = String()
+    
+    var addToFavouritesButton: UIBarButtonItem?
+    var fbShareButton: UIBarButtonItem?
     
     //MARK: Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
@@ -65,9 +66,11 @@ class BeerDetailsViewController: BAViewController {
         
         RequestManager.shared.fetch(url: self.url, delegate: delegate, responseManager: BeerDetailsResponseManager())
         checkIfFavourite()
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         delegate = self
         
         self.placeBackgroundAtForemostPostition(background: backgroundView)
@@ -86,6 +89,7 @@ class BeerDetailsViewController: BAViewController {
         recommendedFood.font = UIFont.defaultDescriptionFont.font
         brewingTips.font = UIFont.defaultDescriptionFont.font
         contributedBy.font = UIFont.defaultDescriptionFont.font
+        
     }
     
     //MARK: Buttons Actions
@@ -102,17 +106,21 @@ class BeerDetailsViewController: BAViewController {
         super.showPopOver(sender: sender, text: textMessage, height: BeerInfoTextConstants.EBCWindownHeight)
     }
     @objc func addToFavouritesButtonPressed() {
+        
         let favouriteBeer = BeersListModel(id: beer!.id, name: beer!.name, tagLine: beer!.tagLine, image_url: (beer?.image_url)!)
         FavouriteBeersManager.shared.manageBeer(beer: favouriteBeer)
         self.checkIfFavourite()
         self.view.layoutIfNeeded()
+        
     }
     /* Works only on real device */
     @objc private func shareToFB() {
+        
         let content = SharePhotoContent()
         content.photos = [SharePhoto(image: self.image.imageView.image!, userGenerated: true)]
         let dialog = ShareDialog.init(fromViewController: self, content: content, delegate: self)
         dialog.show()
+        
     }
     
     //MARK: Util Methods
@@ -125,6 +133,7 @@ class BeerDetailsViewController: BAViewController {
             addToFavouritesButton!.image = UIImage.image(withName: "heart", width: 25, height: 25, withColor: .white)
             addToFavouritesButton?.tintColor = UIColor.DefaultTextColor.color
         }
+        
     }
     
     private func subTitles(bold: String, normal: String) -> NSMutableAttributedString {
@@ -132,20 +141,25 @@ class BeerDetailsViewController: BAViewController {
     }
     
     private func replaceOccurences(ingredients: [Ingredient], replace replacee: String, with replacement: String) -> NSMutableAttributedString {
+        
         var attrString = NSMutableAttributedString()
         for ingredient in ingredients {
+            
             let response = "\(ingredient.amount)"
             let replacedAmount = response.replacingOccurrences(of: "Amount(value:", with: "")
             let replacedUnits = replacedAmount.replacingOccurrences(of: replacee, with: " \(replacement)")
             attrString = attrString + NSMutableAttributedString().normal("\t\n • \(ingredient.name): \(replacedUnits)")
+            
         }
         return attrString
+        
     }
     
 }
 
 //MARK: - ResponseManagerDelegate
 extension BeerDetailsViewController: ResponseManagerDelegate {
+    
     func didGetResponse(_ responseManager: ResponseManagerDelegate, _ beerList: [BABeerModel]) {
         DispatchQueue.main.async {
             self.beer = beerList[0] as? BeerDetailsModel
@@ -183,6 +197,7 @@ extension BeerDetailsViewController: ResponseManagerDelegate {
             
             self.placeBackgroundAtLastPosition(background: self.backgroundView)
         }
+        
     }
     
     func didFailWithError(error: Error) {
@@ -190,8 +205,9 @@ extension BeerDetailsViewController: ResponseManagerDelegate {
     }
 }
 
-//MARK: - Sharing
+//MARK: - Share to Facebook
 extension BeerDetailsViewController: SharingDelegate {
+    
     func sharer(_ sharer: Sharing, didCompleteWithResults results: [String : Any]) {
         HUD.flash(.label(NSLocalizedString("str_share_successful", comment: "")), delay: 0.8)
     }
@@ -203,4 +219,5 @@ extension BeerDetailsViewController: SharingDelegate {
     func sharerDidCancel(_ sharer: Sharing) {
         HUD.flash(.label(NSLocalizedString("str_share_canceled", comment: "")), delay: 0.8)
     }
+    
 }

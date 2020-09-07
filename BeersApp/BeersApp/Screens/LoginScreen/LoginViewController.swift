@@ -12,6 +12,7 @@ import LGButton
 
 class LoginViewController: BAViewController {
     
+    //MARK: - IBOutlets
     @IBOutlet weak var emailTextField: BATextFilterView!
     @IBOutlet weak var passwordTextField: BATextFilterView!
     
@@ -74,4 +75,5 @@ class LoginViewController: BAViewController {
             AuthenticationManager.shared.prepareToGoToHomeScreen(segue: segue)
         }
     }
+    
 }

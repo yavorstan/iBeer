@@ -27,4 +27,5 @@ struct BeerDetailsModel: BABeerModel {
     let malt: [Malt]
     let hops: [Hops]
     let yeast: String
+    
 }
