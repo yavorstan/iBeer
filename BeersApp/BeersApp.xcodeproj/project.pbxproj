@@ -28,7 +28,7 @@
 		B26B349D24224AA900FEB0CC /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B349C24224AA900FEB0CC /* PopupManager.swift */; };
 		B26B34A124234DA900FEB0CC /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B349F24234DA900FEB0CC /* CarouselCell.swift */; };
 		B26B34A224234DA900FEB0CC /* CarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B26B34A024234DA900FEB0CC /* CarouselCell.xib */; };
-		B26B34A52424BD8700FEB0CC /* FilterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B34A42424BD8700FEB0CC /* FilterScreenViewController.swift */; };
+		B26B34A52424BD8700FEB0CC /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B34A42424BD8700FEB0CC /* FiltersViewController.swift */; };
 		B26B34AB2428079600FEB0CC /* BAFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B34AA2428079600FEB0CC /* BAFiltersView.swift */; };
 		B26B34AD242807BC00FEB0CC /* BAFiltersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B26B34AC242807BC00FEB0CC /* BAFiltersView.xib */; };
 		B26B34AF2428123900FEB0CC /* BATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26B34AE2428123900FEB0CC /* BATextField.swift */; };
@@ -65,8 +65,8 @@
 		B27F29EF2410034C0060E45A /* BAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F29EE2410034C0060E45A /* BAButton.swift */; };
 		B27F29F42410F39C0060E45A /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F29F32410F39C0060E45A /* HomeScreenViewController.swift */; };
 		B27F29F6241100F00060E45A /* BATabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F29F5241100F00060E45A /* BATabBarController.swift */; };
-		B27F29F8241102C50060E45A /* SettingsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F29F7241102C50060E45A /* SettingsScreenViewController.swift */; };
-		B27F29FA241102D50060E45A /* FavouritesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F29F9241102D50060E45A /* FavouritesScreenViewController.swift */; };
+		B27F29F8241102C50060E45A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F29F7241102C50060E45A /* SettingsViewController.swift */; };
+		B27F29FA241102D50060E45A /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F29F9241102D50060E45A /* FavouritesViewController.swift */; };
 		B27F29FE241130F90060E45A /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F29FD241130F90060E45A /* RequestManager.swift */; };
 		B27F2A00241134230060E45A /* ResponseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F29FF241134230060E45A /* ResponseManager.swift */; };
 		B27F2A03241135E10060E45A /* BeersListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F2A02241135E10060E45A /* BeersListData.swift */; };
@@ -106,8 +106,8 @@
 		B2F57EF82450731D00CE23FE /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270F08C24177DEB006CF152 /* UIFont+AppFonts.swift */; };
 		B2F57EF92450731F00CE23FE /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F29EC241001530060E45A /* UIColor+AppColors.swift */; };
 		B2F57EFA245074D600CE23FE /* BALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F2A16241243270060E45A /* BALabel.swift */; };
-		B2F57EFD245075A400CE23FE /* ConstantsTodayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F57EFB2450759600CE23FE /* ConstantsTodayWidget.swift */; };
 		C21FB81A07D9A284CA472AD8 /* Pods_todayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF4A0864AFFBD36D7EA3983 /* Pods_todayWidget.framework */; };
+		D9A9C5CD26AA9FC100D603FD /* ConstantsTodayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9C5CC26AA9FC100D603FD /* ConstantsTodayWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,7 +160,7 @@
 		B26B349C24224AA900FEB0CC /* PopupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupManager.swift; sourceTree = "<group>"; };
 		B26B349F24234DA900FEB0CC /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		B26B34A024234DA900FEB0CC /* CarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselCell.xib; sourceTree = "<group>"; };
-		B26B34A42424BD8700FEB0CC /* FilterScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterScreenViewController.swift; sourceTree = "<group>"; };
+		B26B34A42424BD8700FEB0CC /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		B26B34AA2428079600FEB0CC /* BAFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BAFiltersView.swift; sourceTree = "<group>"; };
 		B26B34AC242807BC00FEB0CC /* BAFiltersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BAFiltersView.xib; sourceTree = "<group>"; };
 		B26B34AE2428123900FEB0CC /* BATextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BATextField.swift; sourceTree = "<group>"; };
@@ -198,8 +198,8 @@
 		B27F29EE2410034C0060E45A /* BAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BAButton.swift; sourceTree = "<group>"; };
 		B27F29F32410F39C0060E45A /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		B27F29F5241100F00060E45A /* BATabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BATabBarController.swift; sourceTree = "<group>"; };
-		B27F29F7241102C50060E45A /* SettingsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenViewController.swift; sourceTree = "<group>"; };
-		B27F29F9241102D50060E45A /* FavouritesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesScreenViewController.swift; sourceTree = "<group>"; };
+		B27F29F7241102C50060E45A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B27F29F9241102D50060E45A /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		B27F29FD241130F90060E45A /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		B27F29FF241134230060E45A /* ResponseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseManager.swift; sourceTree = "<group>"; };
 		B27F2A02241135E10060E45A /* BeersListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersListData.swift; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		B2F57EDD2450404000CE23FE /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		B2F57EE02450404000CE23FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		B2F57EE22450404000CE23FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2F57EFB2450759600CE23FE /* ConstantsTodayWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConstantsTodayWidget.swift; path = ../ConstantsTodayWidget.swift; sourceTree = "<group>"; };
+		D9A9C5CC26AA9FC100D603FD /* ConstantsTodayWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsTodayWidget.swift; sourceTree = "<group>"; };
 		E84FDF5EB1FE982A9C7B05ED /* Pods_BeersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -291,13 +291,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		B21AAAC4243F529A006FC8BC /* DeveloperPageSwiftUI */ = {
+		B21AAAC4243F529A006FC8BC /* DeveloperPage */ = {
 			isa = PBXGroup;
 			children = (
 				B21AAAD0244090E1006FC8BC /* Model */,
 				B21AAAC5243F52CD006FC8BC /* DeveloperPage.swift */,
 			);
-			path = DeveloperPageSwiftUI;
+			path = DeveloperPage;
 			sourceTree = "<group>";
 		};
 		B21AAAC7243F5ACD006FC8BC /* Custom SwiftUI Views */ = {
@@ -320,12 +320,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		B25F01A924644A7900DB85FA /* LoginScreen */ = {
+		B25F01A924644A7900DB85FA /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				B25F01AA24644AB200DB85FA /* LoginViewController.swift */,
 			);
-			path = LoginScreen;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		B26B349E24234D3A00FEB0CC /* CarouselCell */ = {
@@ -337,12 +337,12 @@
 			path = CarouselCell;
 			sourceTree = "<group>";
 		};
-		B26B34A32424BD4500FEB0CC /* FilterScreen */ = {
+		B26B34A32424BD4500FEB0CC /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				B26B34A42424BD8700FEB0CC /* FilterScreenViewController.swift */,
+				B26B34A42424BD8700FEB0CC /* FiltersViewController.swift */,
 			);
-			path = FilterScreen;
+			path = Filters;
 			sourceTree = "<group>";
 		};
 		B26B34B02428A70500FEB0CC /* Custom Filter Views */ = {
@@ -384,14 +384,14 @@
 			path = BADateFilterView;
 			sourceTree = "<group>";
 		};
-		B270F0712412859A006CF152 /* BeerDetailsScreen */ = {
+		B270F0712412859A006CF152 /* BeerDetails */ = {
 			isa = PBXGroup;
 			children = (
 				B270F07824163274006CF152 /* Model */,
 				B270F072241285BF006CF152 /* BeerDetailsViewController.swift */,
 				B270F0852416716E006CF152 /* PopOverViewController.swift */,
 			);
-			path = BeerDetailsScreen;
+			path = BeerDetails;
 			sourceTree = "<group>";
 		};
 		B270F07824163274006CF152 /* Model */ = {
@@ -404,19 +404,9 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		B270F0902417B95B006CF152 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B270F0912417B969006CF152 /* UserModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		B27F29BC240FEF990060E45A = {
 			isa = PBXGroup;
 			children = (
-				B27F29C8240FEF990060E45A /* AppDelegate.swift */,
-				B27F29CA240FEF990060E45A /* SceneDelegate.swift */,
 				B27F29C7240FEF990060E45A /* BeersApp */,
 				B2F57EDC2450404000CE23FE /* todayWidget */,
 				B27F29C6240FEF990060E45A /* Products */,
@@ -437,9 +427,8 @@
 		B27F29C7240FEF990060E45A /* BeersApp */ = {
 			isa = PBXGroup;
 			children = (
-				B270F0902417B95B006CF152 /* Model */,
 				B27F29E1240FF9630060E45A /* View */,
-				B27F29E0240FF9520060E45A /* Screens */,
+				B27F29E0240FF9520060E45A /* Controllers */,
 				B27F29DC240FF2460060E45A /* HelperClasses */,
 				D9723E8124F6F1C4001ED940 /* Managers */,
 				D9723E8024F6F199001ED940 /* Utilities */,
@@ -454,10 +443,11 @@
 			children = (
 				B27F29E7240FFC770060E45A /* Constants.swift */,
 				B270F0832416462F006CF152 /* BABeerModel.swift */,
-				B27F2A0B241150C50060E45A /* Custom Views */,
-				B21AAAC7243F5ACD006FC8BC /* Custom SwiftUI Views */,
-				B27F29EB241000D50060E45A /* Custom Extensions */,
+				B270F0912417B969006CF152 /* UserModel.swift */,
 				B27F29DD240FF2530060E45A /* Custom Controlls */,
+				B27F2A0B241150C50060E45A /* Custom Views */,
+				B27F29EB241000D50060E45A /* Custom Extensions */,
+				B21AAAC7243F5ACD006FC8BC /* Custom SwiftUI Views */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -477,20 +467,20 @@
 			path = "Custom Controlls";
 			sourceTree = "<group>";
 		};
-		B27F29E0240FF9520060E45A /* Screens */ = {
+		B27F29E0240FF9520060E45A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B27F29E2240FF9E50060E45A /* WelcomeScreen */,
-				B25F01A924644A7900DB85FA /* LoginScreen */,
-				B290F83324655B2700C34007 /* RegisterScreen */,
+				B27F29E2240FF9E50060E45A /* Welcome */,
+				B25F01A924644A7900DB85FA /* Login */,
+				B290F83324655B2700C34007 /* Register */,
 				B27F29F02410F3330060E45A /* HomeScreen */,
-				B26B34A32424BD4500FEB0CC /* FilterScreen */,
-				B270F0712412859A006CF152 /* BeerDetailsScreen */,
-				B27F29F12410F3460060E45A /* SettingsScreen */,
-				B27F29F22410F3500060E45A /* FavouritesScreen */,
-				B21AAAC4243F529A006FC8BC /* DeveloperPageSwiftUI */,
+				B26B34A32424BD4500FEB0CC /* Filters */,
+				B270F0712412859A006CF152 /* BeerDetails */,
+				B27F29F12410F3460060E45A /* Settings */,
+				B27F29F22410F3500060E45A /* Favourites */,
+				B21AAAC4243F529A006FC8BC /* DeveloperPage */,
 			);
-			path = Screens;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		B27F29E1240FF9630060E45A /* View */ = {
@@ -501,12 +491,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B27F29E2240FF9E50060E45A /* WelcomeScreen */ = {
+		B27F29E2240FF9E50060E45A /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
 				B27F29E9240FFDF40060E45A /* WelcomeViewController.swift */,
 			);
-			path = WelcomeScreen;
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		B27F29EB241000D50060E45A /* Custom Extensions */ = {
@@ -532,21 +522,21 @@
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
-		B27F29F12410F3460060E45A /* SettingsScreen */ = {
+		B27F29F12410F3460060E45A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				B27F29F7241102C50060E45A /* SettingsScreenViewController.swift */,
+				B27F29F7241102C50060E45A /* SettingsViewController.swift */,
 			);
-			path = SettingsScreen;
+			path = Settings;
 			sourceTree = "<group>";
 		};
-		B27F29F22410F3500060E45A /* FavouritesScreen */ = {
+		B27F29F22410F3500060E45A /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
 				B26B349E24234D3A00FEB0CC /* CarouselCell */,
-				B27F29F9241102D50060E45A /* FavouritesScreenViewController.swift */,
+				B27F29F9241102D50060E45A /* FavouritesViewController.swift */,
 			);
-			path = FavouritesScreen;
+			path = Favourites;
 			sourceTree = "<group>";
 		};
 		B27F2A01241135BE0060E45A /* Model */ = {
@@ -594,12 +584,12 @@
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
-		B290F83324655B2700C34007 /* RegisterScreen */ = {
+		B290F83324655B2700C34007 /* Register */ = {
 			isa = PBXGroup;
 			children = (
 				B290F83424655BBB00C34007 /* RegisterViewController.swift */,
 			);
-			path = RegisterScreen;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		B2F57EDC2450404000CE23FE /* todayWidget */ = {
@@ -608,25 +598,19 @@
 				B27FA1542453073B00BAAB2B /* todayWidget.entitlements */,
 				B2F57EDF2450404000CE23FE /* MainInterface.storyboard */,
 				B2F57EDD2450404000CE23FE /* TodayViewController.swift */,
-				B2F5E9AA245351CD003AC3C2 /* Utils */,
 				B27FA1462452BFFC00BAAB2B /* Custom Views */,
 				B2085FC724508317008B1D3F /* Model */,
+				D9A9C5CB26AA9FA800D603FD /* Utils */,
 				B2F57EE22450404000CE23FE /* Info.plist */,
 			);
 			path = todayWidget;
 			sourceTree = "<group>";
 		};
-		B2F5E9AA245351CD003AC3C2 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				B2F57EFB2450759600CE23FE /* ConstantsTodayWidget.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		D9723E8024F6F199001ED940 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B27F29C8240FEF990060E45A /* AppDelegate.swift */,
+				B27F29CA240FEF990060E45A /* SceneDelegate.swift */,
 				B27F29D1240FEF9C0060E45A /* Assets.xcassets */,
 				B27F29D3240FEF9C0060E45A /* LaunchScreen.storyboard */,
 				B2DD68182494C7F200B605F8 /* GoogleService-Info.plist */,
@@ -648,6 +632,14 @@
 				B221594E24458CD300A18B5D /* UserSessionManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		D9A9C5CB26AA9FA800D603FD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D9A9C5CC26AA9FC100D603FD /* ConstantsTodayWidget.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -901,7 +893,7 @@
 				B21AAACD243F6D45006FC8BC /* SwiftUILabel.swift in Sources */,
 				B27F29E6240FFC240060E45A /* BALogo.swift in Sources */,
 				B27FA14C2452D63A00BAAB2B /* TodayWidgetFavouriteCell.swift in Sources */,
-				B26B34A52424BD8700FEB0CC /* FilterScreenViewController.swift in Sources */,
+				B26B34A52424BD8700FEB0CC /* FiltersViewController.swift in Sources */,
 				B26B34AB2428079600FEB0CC /* BAFiltersView.swift in Sources */,
 				B27F2A21241254FB0060E45A /* BADownloadImageViewWithBorder.swift in Sources */,
 				B27F29C9240FEF990060E45A /* AppDelegate.swift in Sources */,
@@ -917,9 +909,9 @@
 				B2046473242A37390096B345 /* Filterable.swift in Sources */,
 				B27F2A03241135E10060E45A /* BeersListData.swift in Sources */,
 				B26B34AF2428123900FEB0CC /* BATextField.swift in Sources */,
-				B27F29F8241102C50060E45A /* SettingsScreenViewController.swift in Sources */,
+				B27F29F8241102C50060E45A /* SettingsViewController.swift in Sources */,
 				B270F0842416462F006CF152 /* BABeerModel.swift in Sources */,
-				B27F29FA241102D50060E45A /* FavouritesScreenViewController.swift in Sources */,
+				B27F29FA241102D50060E45A /* FavouritesViewController.swift in Sources */,
 				B27FA14E2452D65300BAAB2B /* BeerModel.swift in Sources */,
 				B27F29E4240FFA610060E45A /* BAViewController.swift in Sources */,
 				B22159512446E99100A18B5D /* AdvertsManager.swift in Sources */,
@@ -950,7 +942,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2F57EFD245075A400CE23FE /* ConstantsTodayWidget.swift in Sources */,
 				B2085FCA2450847C008B1D3F /* BeerModel.swift in Sources */,
 				B27FA1502452D89700BAAB2B /* BABeerModel.swift in Sources */,
 				B27FA14524508A0500BAAB2B /* BALineDivider.swift in Sources */,
@@ -958,6 +949,7 @@
 				B27FA14F2452D88500BAAB2B /* BeersListModel.swift in Sources */,
 				B2F57EF82450731D00CE23FE /* UIFont+AppFonts.swift in Sources */,
 				B2F57EF4245071ED00CE23FE /* BADownloadImageView.swift in Sources */,
+				D9A9C5CD26AA9FC100D603FD /* ConstantsTodayWidget.swift in Sources */,
 				B2F57EFA245074D600CE23FE /* BALabel.swift in Sources */,
 				B2F57EF3245071DB00CE23FE /* BADownloadImageViewWithBorder.swift in Sources */,
 				B2F57EF92450731F00CE23FE /* UIColor+AppColors.swift in Sources */,
