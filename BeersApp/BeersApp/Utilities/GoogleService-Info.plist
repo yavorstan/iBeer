@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>153172134178-u83llrhqvullp11ivgcobi5odb4o7brm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.153172134178-u83llrhqvullp11ivgcobi5odb4o7brm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCc_QnJczSZTSHVLB2ezclCRzu4n1bdfKE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>153172134178</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.imperiaonline.BeersApp</string>
+	<key>PROJECT_ID</key>
+	<string>ibeer-8e978</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ibeer-8e978.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:153172134178:ios:b9565b3ead35a9b3df3d7b</string>
+	<key>DATABASE_URL</key>
+	<string>https://ibeer-8e978.firebaseio.com</string>
+</dict>
+</plist>
